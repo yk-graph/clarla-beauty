@@ -4,7 +4,7 @@
   "description": "**Objective:**",
   "main": "index.js",
   "scripts": {
-    "live": "live-server src/pages --verbose",
+    "live": "live-server src/pages",
     "dev": "npm run live & npm run sass:watch",
     "sass": "sass src/scss:src/css",
     "sass:watch": "sass --watch src/scss:src/css"
@@ -17,10 +17,6 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "bugs": {
-    "url": "https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-togo-tatsuya/issues"
-  },
-  "homepage": "https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-togo-tatsuya#readme",
   "devDependencies": {
     "live-server": "^1.2.2",
     "sass": "^1.98.0"

@@ -24,5 +24,16 @@
   },
   "[sass]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.includeLanguages": {
+    "scss": "css"
+  },
+  "scss.lint.unknownAtRules": "ignore",
+  "files.associations": {
+    "*.css": "css",
+    "*.scss": "scss"
   }
 }
