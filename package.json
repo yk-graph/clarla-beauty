@@ -1,0 +1,28 @@
+{
+  "name": "final-project-clarla-beauty-togo-tatsuya",
+  "version": "1.0.0",
+  "description": "**Objective:**",
+  "main": "index.js",
+  "scripts": {
+    "live": "live-server src/public/pages --verbose",
+    "dev": "npm run live & npm run sass:watch",
+    "sass": "sass src/public/pages:src/public/pages",
+    "sass:watch": "sass --watch src/public/pages:src/public/pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-togo-tatsuya.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-togo-tatsuya/issues"
+  },
+  "homepage": "https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-togo-tatsuya#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.98.0"
+  }
+}
