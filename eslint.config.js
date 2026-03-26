@@ -1,4 +1,5 @@
 import js from '@eslint/js'
+import globals from 'globals'
 
 export default [
   js.configs.recommended,
@@ -6,13 +7,12 @@ export default [
     languageOptions: {
       ecmaVersion: 2022,
       globals: {
-        window: true,
-        document: true
+        ...globals.browser
       }
     },
     rules: {
       'no-unused-vars': 'warn',
-      'no-console': 'warn',
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
       'no-var': 'error',
       'prefer-const': 'error',
       eqeqeq: 'error'
