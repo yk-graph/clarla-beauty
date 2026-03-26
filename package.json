@@ -37,6 +37,7 @@
     "@eslint/js": "^10.0.1",
     "eslint": "^10.1.0",
     "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.4.0",
     "lint-staged": "^16.4.0",
     "live-server": "^1.2.2",
     "prettier": "^3.8.1",
