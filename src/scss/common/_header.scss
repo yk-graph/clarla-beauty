@@ -6,13 +6,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: $color-paper-white;
+  background-color: var(--color-pale-white);
   z-index: 100;
-  padding: $spacing-md 0;
+  padding: $spacing-xl $spacing-2xl;
 
-  &__container {
-    @include container;
-    @include flex-between;
+  &__inner {
+    @include flex-center;
   }
 
   &__logo {

@@ -34,22 +34,32 @@ img {
   display: block;
 }
 
+:root {
+  --color-brand: #191919;
+  --color-main: #725a58;
+  --color-accent: #e3b6b1;
+  --color-light-pink: #fae9e7;
+  --color-pale-white: #f8f6f4;
+  --color-paper-white: #fbfafa;
+  --color-mid-grey: #888888;
+  --color-dark-grey: #535353;
+  --color-black: #191919;
+  --color-dark-pink: #b99692;
+  --color-brown: #a06d67;
+}
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fbfafa;
+  background-color: var(--color-pale-white);
   z-index: 100;
-  padding: 16px 0;
+  padding: 32px 40px;
 }
-.header__container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
+.header__inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .header__logo {
@@ -87,7 +97,7 @@ img {
 .footer {
   background-color: #191919;
   color: #fbfafa;
-  padding: 48px 0 24px;
+  padding: 40px 0 24px;
 }
 .footer__container {
   width: 100%;
@@ -144,7 +154,7 @@ img {
 }
 
 .my-work {
-  padding: 48px 0;
+  padding: 40px 0;
 }
 .my-work__container {
   width: 100%;
@@ -181,7 +191,7 @@ img {
 }
 
 .services {
-  padding: 48px 0;
+  padding: 40px 0;
 }
 .services__container {
   width: 100%;
@@ -219,7 +229,7 @@ img {
 }
 
 .classes {
-  padding: 48px 0;
+  padding: 40px 0;
 }
 .classes__container {
   width: 100%;
@@ -260,7 +270,7 @@ img {
 }
 
 .beauty-tips {
-  padding: 48px 0;
+  padding: 40px 0;
 }
 .beauty-tips__container {
   width: 100%;
@@ -290,7 +300,7 @@ img {
 }
 
 .about {
-  padding: 48px 0;
+  padding: 40px 0;
 }
 .about__container {
   width: 100%;
@@ -322,7 +332,7 @@ img {
 }
 
 .contact {
-  padding: 48px 0;
+  padding: 40px 0;
 }
 .contact__container {
   width: 100%;

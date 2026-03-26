@@ -36,3 +36,17 @@ img {
   height: auto;
   display: block;
 }
+
+:root {
+  --color-brand: #{$color-brand};
+  --color-main: #{$color-main};
+  --color-accent: #{$color-accent};
+  --color-light-pink: #{$color-light-pink};
+  --color-pale-white: #{$color-pale-white};
+  --color-paper-white: #{$color-paper-white};
+  --color-mid-grey: #{$color-mid-grey};
+  --color-dark-grey: #{$color-dark-grey};
+  --color-black: #{$color-black};
+  --color-dark-pink: #{$color-dark-pink};
+  --color-brown: #{$color-brown};
+}
