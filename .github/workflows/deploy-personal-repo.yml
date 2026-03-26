@@ -1,0 +1,24 @@
+name: CD - Mirror to Personal Repo
+
+on:
+  workflow_run:
+    workflows: ['Code Quality Check']
+    types:
+      - completed
+    branches: [main]
+
+jobs:
+  mirror:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Push to personal repository
+        run: |
+          git remote add personal https://x-access-token:${{ secrets.PERSONAL_REPO_TOKEN }}@github.com/yk-graph/clarla-beauty.git
+          git push personal main --force
