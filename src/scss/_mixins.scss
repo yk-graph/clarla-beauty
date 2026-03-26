@@ -45,3 +45,11 @@
   margin: 0 auto;
   padding: 0 $spacing-md;
 }
+
+// Typography
+@mixin text($size, $weight: normal, $color: $color-brand, $family: $font-family-base) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  font-family: $family;
+}
