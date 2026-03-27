@@ -144,7 +144,9 @@ $my-work-title-taupe: $color-main;
     padding: 10px $spacing-xxl;
     min-width: 11rem;
     text-align: center;
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
 
     &:hover {
       background-color: rgba($color-black, 0.04);
