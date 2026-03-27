@@ -19,7 +19,7 @@ $my-work-title-taupe: $color-main;
     padding: $spacing-xl 0 $spacing-lg;
 
     @include md {
-      padding: $spacing-xxl 0 $spacing-xl;
+      padding: $spacing-2xl 0 $spacing-xl;
     }
   }
 
@@ -60,10 +60,10 @@ $my-work-title-taupe: $color-main;
 
   &__inner {
     background-color: $color-light-pink;
-    padding: $spacing-xl $spacing-md $spacing-xxl;
+    padding: $spacing-xl $spacing-md $spacing-2xl;
 
     @include md {
-      padding: $spacing-xxl $spacing-lg ($spacing-xxl + $spacing-lg);
+      padding: $spacing-2xl $spacing-lg ($spacing-2xl + $spacing-lg);
     }
   }
 
@@ -141,7 +141,7 @@ $my-work-title-taupe: $color-main;
     background: transparent;
     border: 1px solid $color-black;
     border-radius: 16px;
-    padding: 10px $spacing-xxl;
+    padding: 10px $spacing-2xl;
     min-width: 11rem;
     text-align: center;
     transition:

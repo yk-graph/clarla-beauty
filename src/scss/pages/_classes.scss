@@ -23,13 +23,13 @@ $classes-card-gap: 3.75rem;
     padding: $spacing-xl 0 $spacing-lg;
 
     @include md {
-      padding: $spacing-xxl 0 $spacing-xl;
+      padding: $spacing-2xl 0 $spacing-xl;
     }
   }
 
   &__shell {
     background-color: $classes-shell-pink;
-    padding-bottom: $spacing-xxl;
+    padding-bottom: $spacing-2xl;
   }
 
   &__container {
@@ -135,7 +135,7 @@ $classes-card-gap: 3.75rem;
     text-align: left;
 
     @include md {
-      padding: $spacing-xl $spacing-xl $spacing-xl $spacing-xxl;
+      padding: $spacing-xl $spacing-xl $spacing-xl $spacing-2xl;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
