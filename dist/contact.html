@@ -256,7 +256,48 @@
               </div>
 
               <div class="contact__actions">
-                <button type="submit" class="contact__submit">Submit</button>
+                <button type="button" class="contact__submit" data-service-submit>Submit</button>
+              </div>
+            </div>
+
+            <div class="contact__step" data-service-step="3" hidden>
+              <div class="contact__result">
+                <h2 class="contact__result-title">
+                  Thanks <span data-result-name>Janny</span>,<br />we will contact you soon!
+                </h2>
+                <p class="contact__result-subtitle">
+                  We will call <span data-result-contact>+1-123-4567-890</span> to confirm the appointment details with
+                  you.
+                </p>
+                <button type="button" class="contact__result-edit" data-service-edit> Edit Details &gt; </button>
+
+                <div class="contact__result-card">
+                  <img src="/images/form-complete.png" alt="Beauty tools" class="contact__result-image" />
+                  <p class="contact__result-note">Your estimated price will be:</p>
+                  <p class="contact__result-price">CAD 1,000 - 1,200</p>
+
+                  <div class="contact__result-columns">
+                    <div>
+                      <h3>Basic services</h3>
+                      <ul data-result-basic-services></ul>
+                    </div>
+                    <div>
+                      <h3>Premium services</h3>
+                      <ul data-result-premium-services></ul>
+
+                      <h3>Additional attendees</h3>
+                      <ul data-result-attendees></ul>
+                    </div>
+                  </div>
+
+                  <div class="contact__result-footer">
+                    <div>
+                      <p class="contact__result-logo">cb</p>
+                      <p class="contact__result-brand">Carla Beauty</p>
+                    </div>
+                    <button type="button" class="contact__submit contact__result-share">Share</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

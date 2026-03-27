@@ -1125,6 +1125,109 @@ img {
   display: flex;
   justify-content: center;
 }
+.contact__result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__result-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Baskervville";
+  line-height: 1.2;
+}
+.contact__result-subtitle {
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Avenir";
+}
+.contact__result-edit {
+  align-self: flex-start;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.85);
+  font-family: "Avenir";
+  cursor: pointer;
+}
+.contact__result-card {
+  border: 1px solid rgba(114, 90, 88, 0.2);
+  background-color: rgba(251, 250, 250, 0.35);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__result-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.contact__result-note {
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.85);
+  font-family: "Avenir";
+}
+.contact__result-price {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.95);
+  font-family: "Baskervville";
+}
+.contact__result-columns {
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 576px) {
+  .contact__result-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contact__result-columns h3 {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.95);
+  font-family: "Baskervville";
+  margin-bottom: 4px;
+}
+.contact__result-columns ul {
+  list-style: none;
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Avenir";
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contact__result-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+.contact__result-logo {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.95);
+  font-family: "Baskervville";
+  line-height: 1;
+}
+.contact__result-brand {
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Avenir";
+}
+.contact__result-share {
+  min-width: 90px;
+}
 .contact__signature {
   text-align: center;
   margin-top: 40px;

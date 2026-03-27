@@ -321,6 +321,96 @@
     justify-content: center;
   }
 
+  &__result {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__result-title {
+    @include text(clamp(2rem, 3.5vw, 3rem), normal, rgba($color-main, 0.9), 'Baskervville');
+    line-height: 1.2;
+  }
+
+  &__result-subtitle {
+    @include text(clamp(0.75rem, 1vw, 0.875rem), normal, rgba($color-main, 0.9), 'Avenir');
+  }
+
+  &__result-edit {
+    align-self: flex-start;
+    border: none;
+    background: transparent;
+    padding: 0;
+    @include text(clamp(0.875rem, 1vw, 1rem), normal, rgba($color-main, 0.85), 'Avenir');
+    cursor: pointer;
+  }
+
+  &__result-card {
+    border: 1px solid rgba($color-main, 0.2);
+    background-color: rgba($color-paper-white, 0.35);
+    padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__result-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  &__result-note {
+    @include text(clamp(0.75rem, 1vw, 0.8125rem), normal, rgba($color-main, 0.85), 'Avenir');
+  }
+
+  &__result-price {
+    @include text(clamp(1.75rem, 3vw, 2.5rem), normal, rgba($color-main, 0.95), 'Baskervville');
+  }
+
+  &__result-columns {
+    display: grid;
+    gap: $spacing-md;
+
+    @include sm {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__result-columns h3 {
+    @include text(clamp(1rem, 1.6vw, 1.25rem), normal, rgba($color-main, 0.95), 'Baskervville');
+    margin-bottom: $spacing-xs;
+  }
+
+  &__result-columns ul {
+    list-style: none;
+    @include text(clamp(0.75rem, 1vw, 0.8125rem), normal, black, 'Avenir');
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__result-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: $spacing-md;
+    margin-top: $spacing-sm;
+  }
+
+  &__result-logo {
+    @include text(clamp(2rem, 4vw, 3rem), normal, rgba($color-main, 0.95), 'Baskervville');
+    line-height: 1;
+  }
+
+  &__result-brand {
+    @include text(clamp(0.75rem, 1vw, 0.8125rem), normal, rgba($color-main, 0.9), 'Avenir');
+  }
+
+  &__result-share {
+    min-width: 90px;
+  }
+
   &__signature {
     text-align: center;
     margin-top: $spacing-2xl;
