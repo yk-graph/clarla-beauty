@@ -7,8 +7,6 @@ $services-shell-pink: #fbe7e4;
 $services-taupe: #8d7a71;
 $services-copy: #4a4a4a;
 $services-intro: #555555;
-$services-line-rose: #e59890;
-$services-line-coral: #f5c9be;
 $services-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 $services-font-body: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 $services-card-gap: 3.75rem;
@@ -63,28 +61,11 @@ $services-shell-pad-bottom-md: 7.5rem;
   }
 
   &__title {
-    display: inline-block;
-    font-family: $services-font-display;
-    font-size: clamp(2rem, 5vw, 3.25rem);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    line-height: 1.15;
-    color: $services-taupe;
-    margin: 0;
+    @include page-hero-h1;
   }
 
-  &__title-accent {
-    width: min(20rem, 88%);
-    height: 3px;
-    margin: 0.85rem auto 0;
-    border-radius: 2px;
-    background: linear-gradient(
-      90deg,
-      $services-line-rose 0%,
-      $services-line-coral 52%,
-      rgba($services-shell-pink, 0.85) 100%
-    );
+  &__title-underline {
+    @include page-hero-h1-rule;
   }
 
   &__intro {

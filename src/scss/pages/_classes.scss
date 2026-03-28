@@ -51,17 +51,11 @@ $classes-card-gap: 3.75rem;
   }
 
   &__title {
-    display: inline-block;
-    font-family: $classes-font-display;
-    font-size: clamp(2rem, 5vw, 3.25rem);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    line-height: 1.15;
-    color: $classes-title-taupe;
-    border-bottom: 1px solid $classes-title-taupe;
-    padding-bottom: $spacing-sm;
-    margin: 0;
+    @include page-hero-h1;
+  }
+
+  &__title-underline {
+    @include page-hero-h1-rule;
   }
 
   &__intro {

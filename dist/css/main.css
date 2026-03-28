@@ -149,8 +149,29 @@ img {
   align-items: center;
   text-align: center;
 }
-.home__hero-title {
+.home__title-wrap {
+  text-align: center;
   margin-bottom: 16px;
+}
+.home__hero-title {
+  display: inline-block;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  line-height: 1.15;
+  color: #725a58;
+  padding-bottom: 8px;
+  margin: 0;
+}
+.home__hero-title-rule {
+  width: 200px;
+  height: 1px;
+  margin: 8px auto 0;
+  padding: 0;
+  border: 1px solid #e3b6b1;
+  background-color: #e3b6b1;
 }
 .home__hero-subtitle {
   font-size: 18px;
@@ -186,7 +207,7 @@ img {
 }
 .my-work__title {
   display: inline-block;
-  font-family: Baskervville;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.25rem, 6vw, 4.5rem);
   font-weight: 400;
   text-transform: uppercase;
@@ -199,10 +220,10 @@ img {
 .my-work__title-underline {
   width: 200px;
   height: 1px;
-  background-color: #e3b6b1;
-  margin-top: 8px;
+  margin: 8px auto 0;
+  padding: 0;
   border: 1px solid #e3b6b1;
-  margin: 0 auto;
+  background-color: #e3b6b1;
 }
 .my-work__subtitle {
   font-family: Avenir;
@@ -388,21 +409,23 @@ img {
 }
 .services__title {
   display: inline-block;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 500;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   line-height: 1.15;
-  color: #8d7a71;
+  color: #725a58;
+  padding-bottom: 8px;
   margin: 0;
 }
-.services__title-accent {
-  width: min(20rem, 88%);
-  height: 3px;
-  margin: 0.85rem auto 0;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #e59890 0%, #f5c9be 52%, rgba(251, 231, 228, 0.85) 100%);
+.services__title-underline {
+  width: 200px;
+  height: 1px;
+  margin: 8px auto 0;
+  padding: 0;
+  border: 1px solid #e3b6b1;
+  background-color: #e3b6b1;
 }
 .services__intro {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
@@ -608,16 +631,23 @@ img {
 }
 .classes__title {
   display: inline-block;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 500;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   line-height: 1.15;
   color: #725a58;
-  border-bottom: 1px solid #725a58;
   padding-bottom: 8px;
   margin: 0;
+}
+.classes__title-underline {
+  width: 200px;
+  height: 1px;
+  margin: 8px auto 0;
+  padding: 0;
+  border: 1px solid #e3b6b1;
+  background-color: #e3b6b1;
 }
 .classes__intro {
   font-family: "Cormorant Garamond", Georgia, serif;
@@ -833,7 +863,7 @@ img {
 }
 .beauty-tips__title {
   display: inline-block;
-  font-family: Baskervville;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.25rem, 6vw, 4.5rem);
   font-weight: 400;
   text-transform: uppercase;
@@ -846,9 +876,10 @@ img {
 .beauty-tips__title-underline {
   width: 200px;
   height: 1px;
-  background-color: #e3b6b1;
-  border: 1px solid #e3b6b1;
   margin: 8px auto 0;
+  padding: 0;
+  border: 1px solid #e3b6b1;
+  background-color: #e3b6b1;
 }
 .beauty-tips__intro {
   font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1069,22 +1100,24 @@ img {
   margin: 0 0 8px;
 }
 .about__title {
-  font-family: Baskervville;
-  font-size: clamp(2rem, 5.5vw, 3.75rem);
+  display: inline-block;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
   font-weight: 400;
-  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
   line-height: 1.15;
   color: #725a58;
-  text-transform: uppercase;
   padding-bottom: 8px;
   margin: 0;
 }
 .about__title-underline {
   width: 200px;
   height: 1px;
-  background-color: #e3b6b1;
-  border: 1px solid #e3b6b1;
   margin: 8px auto 0;
+  padding: 0;
+  border: 1px solid #e3b6b1;
+  background-color: #e3b6b1;
 }
 .about__intro {
   font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1163,15 +1196,11 @@ img {
 }
 .about__actions {
   margin-top: 32px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 @media (min-width: 768px) {
   .about__actions {
-    justify-content: flex-start;
+    text-align: left;
   }
 }
 .about__btn {
@@ -1194,13 +1223,6 @@ img {
 }
 .about__btn:hover {
   background-color: rgba(114, 90, 88, 0.06);
-}
-.about__btn--secondary {
-  border-color: #e3b6b1;
-  color: #b99692;
-}
-.about__btn--secondary:hover {
-  background-color: rgba(227, 182, 177, 0.2);
 }
 .about__brands {
   background-color: #f8f6f4;

@@ -4,8 +4,6 @@
 $my-work-bg-page: #f8f6f4;
 $my-work-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 $my-work-font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-// Figma: muted taupe for MY WORK + underline (footer active link style)
-$my-work-title-taupe: $color-main;
 .my-work {
   padding-top: 5.25rem;
 
@@ -32,24 +30,11 @@ $my-work-title-taupe: $color-main;
   }
 
   &__title {
-    display: inline-block;
-    font-family: Baskervville;
-    font-size: clamp(2.25rem, 6vw, 4.5rem);
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    line-height: 1.15;
-    color: $my-work-title-taupe;
-    padding-bottom: $spacing-sm;
-    margin: 0;
+    @include page-hero-h1;
   }
+
   &__title-underline {
-    width: 200px;
-    height: 1px;
-    background-color: $color-accent;
-    margin-top: $spacing-sm;
-    border: 1px solid $color-accent;
-    margin: 0 auto;
+    @include page-hero-h1-rule;
   }
   &__subtitle {
     font-family: Avenir;
