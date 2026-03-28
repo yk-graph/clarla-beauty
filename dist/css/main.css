@@ -1762,6 +1762,12 @@ img {
   border-top: 1px solid rgba(114, 90, 88, 0.2);
   color: rgba(114, 90, 88, 0.9);
 }
+.contact__signature-logo {
+  display: block;
+  width: min(140px, 42vw);
+  height: auto;
+  margin-inline: auto;
+}
 .contact__signature-mark {
   font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.25rem, 5vw, 3.5rem);

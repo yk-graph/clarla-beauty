@@ -513,6 +513,13 @@
     color: rgba($color-main, 0.9);
   }
 
+  &__signature-logo {
+    display: block;
+    width: min(140px, 42vw);
+    height: auto;
+    margin-inline: auto;
+  }
+
   &__signature-mark {
     font-family: $font-family-heading;
     font-size: clamp(2.25rem, 5vw, 3.5rem);
