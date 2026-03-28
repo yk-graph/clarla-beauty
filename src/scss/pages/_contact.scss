@@ -279,6 +279,76 @@
     @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, black);
   }
 
+  &__check input[type='checkbox'],
+  &__check input[type='radio'],
+  &__choice input[type='checkbox'],
+  &__choice input[type='radio'] {
+    -webkit-appearance: none;
+    appearance: none;
+    inline-size: 18px;
+    block-size: 18px;
+    min-inline-size: 18px;
+    min-block-size: 18px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    border: 1.5px solid $color-dark-pink;
+    background-color: $color-paper-white;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  &__check input[type='checkbox'],
+  &__choice input[type='checkbox'] {
+    border-radius: 0;
+  }
+
+  &__check input[type='radio'],
+  &__choice input[type='radio'] {
+    border-radius: 50%;
+    border: 3px solid $color-paper-white;
+    box-shadow: 0 0 0 1px rgba($color-dark-pink, 0.7);
+  }
+
+  &__check input[type='checkbox']:checked,
+  &__choice input[type='checkbox']:checked {
+    background-color: $color-dark-pink;
+    border-color: $color-dark-pink;
+  }
+
+  &__check input[type='checkbox']:checked::after,
+  &__choice input[type='checkbox']:checked::after {
+    content: '';
+    width: 4px;
+    height: 8px;
+    border: solid $color-paper-white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
+
+  &__check input[type='radio']:checked::after,
+  &__choice input[type='radio']:checked::after {
+    content: none;
+  }
+
+  &__check input[type='radio']:checked,
+  &__choice input[type='radio']:checked {
+    background-color: rgba($color-dark-pink, 0.75);
+    border-color: $color-paper-white;
+    box-shadow: 0 0 0 1px rgba($color-dark-pink, 0.7);
+  }
+
+  &__check input[type='checkbox']:focus-visible,
+  &__check input[type='radio']:focus-visible,
+  &__choice input[type='checkbox']:focus-visible,
+  &__choice input[type='radio']:focus-visible {
+    outline: 2px solid rgba($color-dark-pink, 0.35);
+    outline-offset: 2px;
+  }
+
   &__group > input {
     width: 100%;
     background-color: $color-paper-white;

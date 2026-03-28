@@ -1539,6 +1539,56 @@ img {
   color: black;
   font-family: "Lora", "Georgia", serif;
 }
+.contact__check input[type=checkbox], .contact__check input[type=radio], .contact__choice input[type=checkbox], .contact__choice input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  inline-size: 18px;
+  block-size: 18px;
+  min-inline-size: 18px;
+  min-block-size: 18px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  border: 1.5px solid #b99692;
+  background-color: #fbfafa;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.contact__check input[type=checkbox], .contact__choice input[type=checkbox] {
+  border-radius: 0;
+}
+.contact__check input[type=radio], .contact__choice input[type=radio] {
+  border-radius: 50%;
+  border: 3px solid #fbfafa;
+  box-shadow: 0 0 0 1px rgba(185, 150, 146, 0.7);
+}
+.contact__check input[type=checkbox]:checked, .contact__choice input[type=checkbox]:checked {
+  background-color: #b99692;
+  border-color: #b99692;
+}
+.contact__check input[type=checkbox]:checked::after, .contact__choice input[type=checkbox]:checked::after {
+  content: "";
+  width: 4px;
+  height: 8px;
+  border: solid #fbfafa;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.contact__check input[type=radio]:checked::after, .contact__choice input[type=radio]:checked::after {
+  content: none;
+}
+.contact__check input[type=radio]:checked, .contact__choice input[type=radio]:checked {
+  background-color: rgba(185, 150, 146, 0.75);
+  border-color: #fbfafa;
+  box-shadow: 0 0 0 1px rgba(185, 150, 146, 0.7);
+}
+.contact__check input[type=checkbox]:focus-visible, .contact__check input[type=radio]:focus-visible, .contact__choice input[type=checkbox]:focus-visible, .contact__choice input[type=radio]:focus-visible {
+  outline: 2px solid rgba(185, 150, 146, 0.35);
+  outline-offset: 2px;
+}
 .contact__group > input {
   width: 100%;
   background-color: #fbfafa;
@@ -1712,9 +1762,6 @@ img {
   border-top: 1px solid rgba(114, 90, 88, 0.2);
   color: rgba(114, 90, 88, 0.9);
 }
-.contact__signature-logo {
-  margin-inline: auto;
-}
 .contact__signature-mark {
   font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.25rem, 5vw, 3.5rem);
@@ -1742,10 +1789,6 @@ img {
   color: rgba(114, 90, 88, 0.9);
   font-family: "Lora", "Georgia", serif;
   text-transform: lowercase;
-}
-.contact__signature-icon {
-  width: 18px;
-  height: 18px;
 }
 @media (min-width: 576px) {
   .contact {
