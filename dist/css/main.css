@@ -101,7 +101,7 @@ img {
 .footer {
   background-color: #191919;
   color: #fbfafa;
-  padding: 80px 0 24px;
+  padding: 40px 0 24px;
 }
 .footer__container {
   width: 100%;
@@ -288,27 +288,6 @@ img {
 .my-work__panel > .my-work__gallery {
   align-self: stretch;
 }
-.my-work__tab {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #191919;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px 0;
-  border-bottom: 2px solid transparent;
-}
-.my-work__tab.is-active {
-  font-weight: 600;
-  border-bottom-color: #191919;
-}
-.my-work__tab:hover {
-  color: #535353;
-}
-.my-work__panel:not(.is-active) {
-  display: none;
-}
 .my-work__gallery {
   display: grid;
   grid-template-columns: 1fr;
@@ -376,7 +355,7 @@ img {
 }
 @media (min-width: 768px) {
   .services__hero {
-    padding: 80px 0 32px;
+    padding: 40px 0 32px;
   }
 }
 .services__shell {
@@ -498,7 +477,7 @@ img {
 }
 @media (min-width: 768px) {
   .services__body {
-    padding: 32px 32px 32px 80px;
+    padding: 32px 32px 32px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -603,12 +582,12 @@ img {
 }
 @media (min-width: 768px) {
   .classes__hero {
-    padding: 80px 0 32px;
+    padding: 40px 0 32px;
   }
 }
 .classes__shell {
   background-color: #fae9e7;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 .classes__container {
   width: 100%;
@@ -719,7 +698,7 @@ img {
 }
 @media (min-width: 768px) {
   .classes__body {
-    padding: 32px 32px 32px 80px;
+    padding: 32px 32px 32px 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1280,7 +1259,7 @@ img {
 }
 
 .contact {
-  padding: 80px 0;
+  padding: 32px 0 64px;
 }
 .contact__container {
   width: 100%;
@@ -1733,6 +1712,9 @@ img {
   border-top: 1px solid rgba(114, 90, 88, 0.2);
   color: rgba(114, 90, 88, 0.9);
 }
+.contact__signature-logo {
+  margin-inline: auto;
+}
 .contact__signature-mark {
   font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.25rem, 5vw, 3.5rem);
@@ -1760,6 +1742,10 @@ img {
   color: rgba(114, 90, 88, 0.9);
   font-family: "Lora", "Georgia", serif;
   text-transform: lowercase;
+}
+.contact__signature-icon {
+  width: 18px;
+  height: 18px;
 }
 @media (min-width: 576px) {
   .contact {
