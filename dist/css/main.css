@@ -101,7 +101,7 @@ img {
 .footer {
   background-color: #191919;
   color: #fbfafa;
-  padding: 80px 0 24px;
+  padding: 40px 0 24px;
 }
 .footer__container {
   width: 100%;
@@ -182,100 +182,95 @@ img {
 }
 .my-work__title-wrap {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 .my-work__title {
-  display: inline-block;
-  font-family: Baskervville;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.15;
-  color: #725a58;
-  padding-bottom: 8px;
   margin: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #725a58;
 }
 .my-work__title-underline {
   width: 200px;
   height: 1px;
-  background-color: #e3b6b1;
-  margin-top: 8px;
+  margin: 8px auto 0;
+  padding: 0;
   border: 1px solid #e3b6b1;
-  margin: 0 auto;
+  background-color: #e3b6b1;
 }
 .my-work__subtitle {
-  font-family: Avenir;
-  font-size: clamp(1rem, 2.5vw, 1.1875rem);
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
   font-weight: 300;
+  line-height: 1.5;
   color: #191919;
   text-align: center;
-  line-height: 1.65;
-  max-width: 38rem;
+  max-width: 36.5625rem;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 16px;
 }
 .my-work__inner {
-  background-color: #fcf1f1;
-  padding: 80px 16px 80px;
+  background-color: #f9f1f1;
+  padding: clamp(3rem, 8vw, 5rem) 16px clamp(4rem, 10vw, 9.375rem);
 }
 @media (min-width: 768px) {
   .my-work__inner {
-    padding: 80px 150px 150px;
+    padding: 5rem 32px 9.375rem;
   }
 }
 .my-work__inner > .my-work__container {
   width: 100%;
   max-width: none;
-  padding-left: 0;
-  padding-right: 0;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .my-work__tabs-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 70px;
+  margin-bottom: clamp(2.5rem, 6vw, 4.375rem);
 }
 .my-work__tabs {
   box-sizing: border-box;
-  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 100px;
-  width: min(400px, 100%);
-  height: 53px;
-  border-bottom: 0.5px solid #888888;
+  align-items: stretch;
+  justify-content: stretch;
+  width: min(30.25rem, 100%);
+  min-height: 53px;
+  border-bottom: 1px solid #888888;
 }
 .my-work__tab {
   box-sizing: border-box;
   position: relative;
-  z-index: 1;
-  flex: 0 0 auto;
-  height: 100%;
+  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.375rem, 2.4vw, 1.6875rem);
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
   white-space: nowrap;
   color: #888888;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0 0 1px;
+  padding: 0 0 10px;
   margin-bottom: -1px;
   border-bottom: 2px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .my-work__tab.is-active {
-  font-weight: 600;
+  font-weight: 500;
   color: #191919;
   border-bottom-color: #191919;
 }
 .my-work__tab:hover:not(.is-active) {
-  color: rgba(136, 136, 136, 0.82);
+  color: rgba(136, 136, 136, 0.85);
 }
 .my-work__panel {
   display: flex;
@@ -292,7 +287,10 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4px;
-  margin-bottom: 96px;
+  width: 100%;
+  max-width: 63.875rem;
+  margin: 0 auto 48px;
+  background-color: #f9f1f1;
 }
 @media (min-width: 992px) {
   .my-work__gallery {
@@ -316,26 +314,33 @@ img {
   transform: scale(1.04);
 }
 .my-work__view-more {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: Baskervville;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: capitalize;
-  color: #a06d67;
+  gap: 10px;
+  width: 10.0625rem;
+  max-width: 100%;
+  min-width: 160px;
+  min-height: 62px;
+  padding: 24px 32px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #725a58;
   background: transparent;
-  border: 1px solid #725a58;
+  border: 0.8px solid #725a58;
   border-radius: 0;
-  padding: 16px 40px;
-  min-width: 10.5rem;
   text-align: center;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
 }
 .my-work__view-more:hover {
-  background-color: rgba(114, 90, 88, 0.06);
+  background-color: rgba(114, 90, 88, 0.04);
 }
 
 .services {
@@ -350,12 +355,12 @@ img {
   padding-bottom: 0;
 }
 .services__hero {
-  background-color: #faf7f6;
+  background-color: #f8f6f4;
   padding: 32px 0 24px;
 }
 @media (min-width: 768px) {
   .services__hero {
-    padding: 80px 0 32px;
+    padding: 40px 0 32px;
   }
 }
 .services__shell {
@@ -384,36 +389,36 @@ img {
 }
 .services__title-wrap {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 .services__title {
-  display: inline-block;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.15;
-  color: #8d7a71;
   margin: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #725a58;
 }
-.services__title-accent {
-  width: min(20rem, 88%);
-  height: 3px;
-  margin: 0.85rem auto 0;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #e59890 0%, #f5c9be 52%, rgba(251, 231, 228, 0.85) 100%);
+.services__title-underline {
+  width: 200px;
+  height: 1px;
+  margin: 8px auto 0;
+  padding: 0;
+  border: 1px solid #e3b6b1;
+  background-color: #e3b6b1;
 }
 .services__intro {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #191919;
   text-align: center;
-  color: #555555;
-  max-width: 38rem;
+  max-width: 36.5625rem;
   margin: 0 auto;
-  line-height: 1.7;
-  padding: 0 8px;
+  padding: 0 16px;
 }
 .services__intro-line {
   display: inline;
@@ -475,19 +480,20 @@ img {
 }
 @media (min-width: 768px) {
   .services__body {
-    padding: 32px 32px 32px 80px;
+    padding: 32px 32px 32px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 }
 .services__name {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.35rem, 2.5vw, 32px);
-  font-weight: 500;
-  color: #8d7a71;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  color: #725a58;
   margin: 0 0 16px;
-  line-height: 1.35;
 }
 .services__meta {
   list-style: none;
@@ -503,9 +509,9 @@ img {
   gap: 8px;
 }
 .services__meta-text {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #4a4a4a;
   line-height: 1.55;
 }
@@ -524,19 +530,24 @@ img {
   display: block;
 }
 .services__tagline {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums proportional-nums;
   color: #4a4a4a;
   margin: 0 0 16px;
-  line-height: 1.65;
 }
 .services__text {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: #4a4a4a;
-  line-height: 1.7;
   margin: 0 0 24px;
 }
 .services__actions {
@@ -545,22 +556,34 @@ img {
   padding-top: 4px;
 }
 .services__btn {
-  display: inline-block;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: #8d7a71;
-  background-color: #fbe7e4;
-  border: 1px solid #8d7a71;
-  border-radius: 2px;
-  padding: 0.65rem 1.75rem;
-  min-width: 9.5rem;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 10.6875rem;
+  max-width: 100%;
+  min-width: 160px;
+  min-height: 62px;
+  padding: 24px 32px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #5e4a49;
+  background-color: transparent;
+  border: 0.8px solid #5e4a49;
+  border-radius: 0;
+  opacity: 1;
   text-align: center;
-  transition: background-color 0.2s;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
 }
 .services__btn:hover {
-  background-color: rgb(247.7096774194, 211.2580645161, 205.7903225806);
+  background-color: rgba(94, 74, 73, 0.04);
 }
 
 .classes {
@@ -580,12 +603,12 @@ img {
 }
 @media (min-width: 768px) {
   .classes__hero {
-    padding: 80px 0 32px;
+    padding: 40px 0 32px;
   }
 }
 .classes__shell {
   background-color: #fae9e7;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 .classes__container {
   width: 100%;
@@ -604,36 +627,54 @@ img {
 }
 .classes__title-wrap {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 .classes__title {
-  display: inline-block;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 500;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 26.0625rem;
+  min-height: 4.875rem;
+  margin: 0 auto;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.15;
   color: #725a58;
-  border-bottom: 1px solid #725a58;
-  padding-bottom: 8px;
-  margin: 0;
+  opacity: 1;
+}
+.classes__title-underline {
+  width: 200px;
+  height: 1px;
+  margin: 8px auto 0;
+  padding: 0;
+  border: 1px solid #e3b6b1;
+  background-color: #e3b6b1;
 }
 .classes__intro {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.125rem;
-  font-weight: 500;
-  text-align: center;
-  color: #535353;
-  max-width: 38rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 27.3125rem;
+  min-height: 3.375rem;
   margin: 0 auto;
-  line-height: 1.7;
-  padding: 0 8px;
+  padding: 0 16px;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: center;
+  color: #191919;
+  opacity: 1;
 }
 .classes__list {
   display: flex;
   flex-direction: column;
-  gap: 3.75rem;
+  gap: 9rem;
   margin: 0;
   padding: 0;
 }
@@ -655,30 +696,36 @@ img {
 }
 .classes__media {
   width: 100%;
+  max-width: 20.5rem;
   flex-shrink: 0;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   line-height: 0;
   background-color: #fae9e7;
+  overflow: hidden;
+  border-radius: 0;
 }
 @media (min-width: 768px) {
   .classes__media {
-    width: 42%;
-    max-width: 400px;
-    align-self: stretch;
+    width: 20.5rem;
+    max-width: 20.5rem;
+    margin: 0;
+    align-self: flex-start;
   }
 }
 .classes__media img {
   width: 100%;
-  height: 100%;
-  min-height: 280px;
+  height: auto;
+  aspect-ratio: 328/500;
   object-fit: cover;
+  object-position: center;
   display: block;
-  vertical-align: top;
 }
 @media (min-width: 768px) {
   .classes__media img {
-    min-height: 100%;
+    width: 20.5rem;
+    height: 31.25rem;
+    aspect-ratio: auto;
   }
 }
 .classes__body {
@@ -689,36 +736,64 @@ img {
 }
 @media (min-width: 768px) {
   .classes__body {
-    padding: 32px 32px 32px 80px;
+    padding: 32px 32px 32px 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
 }
 .classes__name {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.35rem, 2.5vw, 32px);
-  font-weight: 500;
-  color: #725a58;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: none;
   margin: 0 0 16px;
-  line-height: 1.35;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 36px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #725a58;
+  opacity: 1;
+}
+.classes__name-num {
+  font-family: inherit;
+  font-size: 1.05em;
+  font-weight: 400;
+  font-variant-numeric: lining-nums proportional-nums;
+  line-height: inherit;
+  display: inline;
+  vertical-align: baseline;
 }
 .classes__meta {
   list-style: none;
   margin: 0 0 24px;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 32px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #535353;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: clamp(16px, 3vw, 32px);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 .classes__meta li {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.classes__meta-text {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #535353;
 }
 .classes__meta-icon {
   display: flex;
@@ -740,30 +815,37 @@ img {
   margin-bottom: 24px;
 }
 .classes__section-title {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums proportional-nums;
   margin: 0 0 8px;
   color: #725a58;
-  letter-spacing: 0.03em;
 }
 .classes__text {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: #535353;
-  line-height: 1.7;
   margin: 0;
-  font-size: 1rem;
-  font-weight: 500;
 }
 .classes__bullets {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding-left: 1.125rem;
   color: #535353;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.65;
-  list-style-type: square;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0;
+  list-style-type: disc;
 }
 .classes__bullets li {
   margin-bottom: 4px;
@@ -775,22 +857,31 @@ img {
   padding-top: 8px;
 }
 .classes__btn {
-  display: inline-block;
-  font-family: "Lora", "Georgia", serif;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: #191919;
-  background-color: #fff;
-  border: 1px solid #191919;
-  border-radius: 2px;
-  padding: 0.65rem 2rem;
-  min-width: 9.5rem;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 160px;
+  min-width: 160px;
+  min-height: 62px;
+  padding: 24px 32px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: capitalize;
+  color: #5e4a49;
+  background-color: transparent;
+  border: 0.8px solid #5e4a49;
+  border-radius: 0;
+  opacity: 1;
   text-align: center;
-  transition: background-color 0.2s, color 0.2s;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 .classes__btn:hover {
-  background-color: rgba(25, 25, 25, 0.04);
+  background-color: rgba(94, 74, 73, 0.04);
 }
 
 .beauty-tips {
@@ -832,34 +923,40 @@ img {
   margin-bottom: 24px;
 }
 .beauty-tips__title {
-  display: inline-block;
-  font-family: Baskervville;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.15;
-  color: #725a58;
-  padding-bottom: 8px;
+  box-sizing: border-box;
+  width: 100%;
   margin: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #725a58;
 }
 .beauty-tips__title-underline {
   width: 200px;
   height: 1px;
-  background-color: #e3b6b1;
-  border: 1px solid #e3b6b1;
   margin: 8px auto 0;
+  padding: 0;
+  border: 1px solid #e3b6b1;
+  background-color: #e3b6b1;
 }
 .beauty-tips__intro {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto 32px;
+  padding: 0 16px;
   font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.1875rem);
+  font-size: 18px;
   font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
   text-align: center;
   color: #191919;
-  max-width: 38rem;
-  margin: 0 auto 32px;
-  line-height: 1.65;
-  padding: 0 8px;
 }
 .beauty-tips__hero-cta {
   text-align: center;
@@ -869,21 +966,31 @@ img {
 }
 .beauty-tips__filters {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 8px 24px;
-  margin: 0 0 32px;
+  gap: 32px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 1.9375rem;
+  margin: 0 auto 32px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 .beauty-tips__filter {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
   color: #888888;
   background: none;
   border: none;
-  padding: 0.35rem 0.25rem;
+  padding: 0;
+  white-space: nowrap;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
@@ -894,7 +1001,7 @@ img {
 }
 .beauty-tips__filter.is-active {
   color: #191919;
-  font-weight: 600;
+  font-weight: 400;
   border-bottom-color: #725a58;
 }
 .beauty-tips__grid {
@@ -955,13 +1062,6 @@ img {
   object-fit: cover;
   display: block;
 }
-.beauty-tips__thumb::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(25, 25, 25, 0.55) 0%, transparent 45%);
-  pointer-events: none;
-}
 .beauty-tips__play {
   position: absolute;
   top: 8px;
@@ -985,46 +1085,44 @@ img {
   border-width: 5px 0 5px 8px;
   border-color: transparent transparent transparent #725a58;
 }
-.beauty-tips__caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  padding: 16px 8px 8px;
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 1.35;
-  color: #fff;
-  display: block;
-  text-shadow: 0 1px 3px rgba(25, 25, 25, 0.45);
-  pointer-events: none;
-}
 .beauty-tips__more-wrap {
   text-align: center;
   margin-top: clamp(2.5rem, 6vw, 4rem);
 }
 .beauty-tips__btn {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: #725a58;
+  gap: 10px;
+  width: 10.0625rem;
+  max-width: 100%;
+  min-width: 160px;
+  min-height: 62px;
+  padding: 24px 32px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #5e4a49;
   background-color: transparent;
-  border: 1px solid #725a58;
+  border: 0.8px solid #5e4a49;
   border-radius: 0;
-  padding: 14px 3rem;
-  min-width: 11rem;
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   transition: background-color 0.2s ease;
 }
 .beauty-tips__btn:hover {
-  background-color: rgba(114, 90, 88, 0.06);
+  background-color: rgba(94, 74, 73, 0.04);
+}
+.beauty-tips__btn--hero {
+  width: 13.125rem;
+  min-height: 56px;
+  padding: 20px 28px;
+  font-size: 18px;
 }
 
 .about {
@@ -1060,42 +1158,35 @@ img {
   margin-bottom: 0;
 }
 .about__eyebrow {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #e3b6b1;
   margin: 0 0 8px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-align: center;
+  color: #e3b6b1;
 }
 .about__title {
-  font-family: Baskervville;
-  font-size: clamp(2rem, 5.5vw, 3.75rem);
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  line-height: 1.15;
-  color: #725a58;
-  text-transform: uppercase;
-  padding-bottom: 8px;
   margin: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #725a58;
 }
 .about__title-underline {
   width: 200px;
   height: 1px;
-  background-color: #e3b6b1;
-  border: 1px solid #e3b6b1;
   margin: 8px auto 0;
-}
-.about__intro {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.1875rem);
-  font-weight: 300;
-  text-align: center;
-  color: #191919;
-  max-width: 38rem;
-  margin: 32px auto 0;
-  line-height: 1.65;
-  padding: 0 8px;
+  padding: 0;
+  border: 1px solid #e3b6b1;
+  background-color: #e3b6b1;
 }
 .about__shell {
   background-color: #fbe7e4;
@@ -1115,23 +1206,21 @@ img {
 }
 .about__media {
   flex-shrink: 0;
-  width: 100%;
-  max-width: min(100%, 22.5rem);
+  width: 21.9375rem;
+  max-width: 100%;
   margin-inline: auto;
   line-height: 0;
   background-color: rgba(25, 25, 25, 0.04);
 }
 @media (min-width: 768px) {
   .about__media {
-    width: 36%;
-    max-width: 320px;
     margin-inline: 0;
   }
 }
 .about__media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 351/424;
   object-fit: cover;
   display: block;
 }
@@ -1143,23 +1232,36 @@ img {
   min-width: 0;
 }
 .about__headline {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
-  font-weight: 500;
-  color: #725a58;
-  line-height: 1.4;
   margin: 0 0 24px;
-}
-.about__text p {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 400;
-  color: #535353;
-  line-height: 1.75;
-  margin: 0 0 16px;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: #725a58;
 }
-.about__text p:last-child {
-  margin-bottom: 0;
+.about__text {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.about__text-copy {
+  margin: 0;
+  width: max-content;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #535353;
+}
+.about__line {
+  display: block;
+  white-space: nowrap;
 }
 .about__actions {
   margin-top: 32px;
@@ -1171,25 +1273,33 @@ img {
   }
 }
 .about__btn {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: #725a58;
+  gap: 10px;
+  width: 10rem;
+  max-width: 100%;
+  min-width: 160px;
+  min-height: 62px;
+  padding: 24px 32px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #5e4a49;
   background-color: transparent;
-  border: 1px solid #725a58;
+  border: 0.8px solid #191919;
   border-radius: 0;
-  padding: 14px 3rem;
-  min-width: 11rem;
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   transition: background-color 0.2s ease;
 }
 .about__btn:hover {
-  background-color: rgba(114, 90, 88, 0.06);
+  background-color: rgba(25, 25, 25, 0.04);
 }
 .about__brands {
   background-color: #f8f6f4;
@@ -1200,20 +1310,37 @@ img {
     padding-bottom: 7.5rem;
   }
 }
+.about__brands .about__container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2.75rem;
+  max-width: 90rem;
+}
+@media (min-width: 768px) {
+  .about__brands .about__container {
+    min-height: 22.375rem;
+  }
+}
 .about__brands-title {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
-  font-weight: 500;
+  margin: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
   text-align: center;
   color: #725a58;
-  margin: 0 0 32px;
 }
 .about__brands-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px 16px;
+  gap: 2.75rem;
   align-items: center;
   justify-items: center;
+  width: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1221,7 +1348,6 @@ img {
 @media (min-width: 768px) {
   .about__brands-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 32px 24px;
   }
 }
 .about__brand {
@@ -1247,57 +1373,608 @@ img {
 }
 
 .contact {
-  padding: 80px 0;
+  padding: 32px 0 64px;
 }
 .contact__container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
-  max-width: 600px;
+  max-width: 760px;
+}
+.contact__intro {
+  text-align: center;
+  margin-bottom: 40px;
 }
 .contact__title {
-  text-align: center;
+  font-family: "Baskervville", "Georgia", serif;
+  font-weight: 400;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  letter-spacing: 0.2em;
+  color: rgba(114, 90, 88, 0.9);
   margin-bottom: 32px;
 }
+.contact__title-underline {
+  margin: 0 auto 30px;
+  width: 200px;
+  border: 0.5px solid #e3b6b1;
+}
+.contact__lead {
+  max-width: 460px;
+  margin: 0 auto 24px;
+  color: #191919;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  font-weight: 300;
+  color: #191919;
+  font-family: "Avenir";
+  line-height: 1.6;
+}
+.contact__quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 40px;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  font-weight: normal;
+  color: #725a58;
+  font-family: "Avenir";
+  list-style: none;
+}
+.contact__quick-links li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact__quick-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
 .contact__form {
+  max-width: 560px;
+  margin: 0 auto;
+  background-color: rgba(250, 233, 231, 0.5);
+  border: 1px solid rgba(114, 90, 88, 0.15);
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  gap: 24px;
+  color: black;
+}
+@media (min-width: 768px) {
+  .contact__form {
+    padding: 32px;
+  }
+}
+.contact__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid rgba(114, 90, 88, 0.4);
+}
+.contact__tab {
+  border: 0;
+  background: transparent;
+  font-size: clamp(1.125rem, 2vw, 1.75rem);
+  font-weight: normal;
+  color: #191919;
+  font-family: "Lora", "Georgia", serif;
+  padding: 0 0 8px;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+}
+.contact__tab--active {
+  border-bottom-color: black;
+}
+.contact__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact__panel[hidden] {
+  display: none;
+}
+.contact__step {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact__step[hidden] {
+  display: none;
+}
+.contact__back {
+  align-self: flex-start;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.8);
+  font-family: "Avenir";
+  cursor: pointer;
+}
+.contact__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact__group-title {
+  font-size: clamp(1.25rem, 2.1vw, 2rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Baskervville";
+}
+.contact__chips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.contact__chips--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.contact__chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid transparent;
+  background-color: #fbfafa;
+  padding: 8px 16px;
+  font-size: clamp(0.8125rem, 1.1vw, 0.875rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Lora", "Georgia", serif;
+  cursor: pointer;
+}
+.contact__chip input {
+  display: none;
+}
+.contact__chip-label {
+  flex: 1;
+}
+.contact__chip-check {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+.contact .contact__chip input:checked ~ .contact__chip-check {
+  opacity: 1;
+}
+.contact .contact__chip:has(input:checked) {
+  border: 1px solid #b99692;
+}
+.contact__row {
+  display: grid;
   gap: 16px;
+}
+@media (min-width: 576px) {
+  .contact__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contact__row .contact__field > .contact__check {
+  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Lora", "Georgia", serif;
+}
+.contact__premium-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px 24px;
+}
+@media (min-width: 576px) {
+  .contact__premium-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contact__guest-list {
+  border: 1px solid rgba(114, 90, 88, 0.15);
+  background-color: rgba(251, 250, 250, 0.7);
+}
+.contact__guest-list .contact__check input[type=checkbox] {
+  border-color: #e3b6b1;
+}
+.contact__guest-list .contact__check input[type=checkbox]:checked {
+  background-color: #e3b6b1;
+  border-color: #e3b6b1;
+}
+.contact__guest-list .contact__check input[type=checkbox]:focus-visible {
+  outline: 2px solid rgba(227, 182, 177, 0.35);
+}
+.contact__guest-row {
+  display: grid;
+  grid-template-columns: minmax(80px, 1fr) 78px 1px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(114, 90, 88, 0.12);
+  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Avenir";
+}
+@media (min-width: 576px) {
+  .contact__guest-row {
+    grid-template-columns: minmax(90px, 1fr) 78px 1px 1fr 1fr;
+  }
+}
+.contact__guest-row:last-child {
+  border-bottom: none;
+}
+.contact__guest-counter {
+  display: inline-grid;
+  grid-template-columns: 26px 26px 26px;
+  align-items: center;
+  justify-items: center;
+  height: 34px;
+  background-color: #fae9e7;
+  padding: 0;
+  margin-right: 0;
+}
+.contact__guest-counter-divider {
+  width: 1px;
+  height: 46px;
+  background-color: rgba(185, 150, 146, 0.6);
+  justify-self: center;
+}
+.contact__guest-counter-button {
+  border: none;
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: normal;
+  color: rgba(25, 25, 25, 0.75);
+  font-family: "Avenir";
+  line-height: 1;
+  cursor: pointer;
+}
+.contact__guest-counter-button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.contact__guest-counter-value {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: normal;
+  color: #191919;
+  font-family: "Avenir";
+  line-height: 1;
+  min-width: 16px;
+  text-align: center;
 }
 .contact__field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
-.contact__field label {
-  font-size: 14px;
+.contact__field > label:not(.contact__check) {
+  font-size: clamp(1.25rem, 2.1vw, 2rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Baskervville";
 }
 .contact__field input,
+.contact__field select,
 .contact__field textarea {
+  background-color: #fbfafa;
+  border: 1px solid rgba(114, 90, 88, 0.25);
   padding: 8px 16px;
-  border: 1px solid rgba(25, 25, 25, 0.2);
-  font-family: inherit;
-  font-size: 16px;
-}
-.contact__field input:focus,
-.contact__field textarea:focus {
-  outline: none;
-  border-color: #e3b6b1;
+  font-size: clamp(0.8125rem, 1.1vw, 0.875rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.85);
+  font-family: "Lora", "Georgia", serif;
 }
 .contact__field textarea {
-  min-height: 150px;
+  min-height: 110px;
   resize: vertical;
 }
+.contact__hint {
+  margin-top: -4px;
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.75);
+  font-family: "Lora", "Georgia", serif;
+}
+.contact__check {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Lora", "Georgia", serif;
+}
+.contact__choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 2px;
+}
+.contact__choices--stack {
+  flex-direction: column;
+  gap: 8px;
+}
+.contact__choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Lora", "Georgia", serif;
+}
+.contact__check input[type=checkbox], .contact__check input[type=radio], .contact__choice input[type=checkbox], .contact__choice input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  inline-size: 18px;
+  block-size: 18px;
+  min-inline-size: 18px;
+  min-block-size: 18px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  border: 1.5px solid #b99692;
+  background-color: #fbfafa;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.contact__check input[type=checkbox], .contact__choice input[type=checkbox] {
+  border-radius: 0;
+}
+.contact__check input[type=radio], .contact__choice input[type=radio] {
+  border-radius: 50%;
+  border: 3px solid #fbfafa;
+  box-shadow: 0 0 0 1px rgba(185, 150, 146, 0.7);
+}
+.contact__check input[type=checkbox]:checked, .contact__choice input[type=checkbox]:checked {
+  background-color: #b99692;
+  border-color: #b99692;
+}
+.contact__check input[type=checkbox]:checked::after, .contact__choice input[type=checkbox]:checked::after {
+  content: "";
+  width: 4px;
+  height: 8px;
+  border: solid #fbfafa;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.contact__check input[type=radio]:checked::after, .contact__choice input[type=radio]:checked::after {
+  content: none;
+}
+.contact__check input[type=radio]:checked, .contact__choice input[type=radio]:checked {
+  background-color: rgba(185, 150, 146, 0.75);
+  border-color: #fbfafa;
+  box-shadow: 0 0 0 1px rgba(185, 150, 146, 0.7);
+}
+.contact__check input[type=checkbox]:focus-visible, .contact__check input[type=radio]:focus-visible, .contact__choice input[type=checkbox]:focus-visible, .contact__choice input[type=radio]:focus-visible {
+  outline: 2px solid rgba(185, 150, 146, 0.35);
+  outline-offset: 2px;
+}
+.contact__group > input {
+  width: 100%;
+  background-color: #fbfafa;
+  border: 1px solid rgba(114, 90, 88, 0.25);
+  padding: 8px 16px;
+  font-size: clamp(0.8125rem, 1.1vw, 0.875rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.85);
+  font-family: "Lora", "Georgia", serif;
+}
+.contact input:focus,
+.contact select:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: rgba(114, 90, 88, 0.55);
+}
 .contact__submit {
-  background-color: #191919;
-  color: #fbfafa;
-  padding: 16px 32px;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  align-self: center;
+  min-width: 120px;
+  border: 1px solid rgba(114, 90, 88, 0.4);
+  background-color: transparent;
+  color: rgba(114, 90, 88, 0.8);
+  padding: 8px 24px;
+  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  transition: background-color 0.25s, color 0.25s;
 }
 .contact__submit:hover {
-  background-color: #535353;
+  background-color: rgba(114, 90, 88, 0.08);
+  color: #725a58;
+}
+.contact__next {
+  margin-top: 8px;
+}
+.contact__actions {
+  display: flex;
+  justify-content: center;
+}
+.contact__result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__result-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Baskervville";
+  line-height: 1.2;
+}
+.contact__result-subtitle {
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Avenir";
+}
+.contact__result-edit {
+  align-self: flex-start;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.85);
+  font-family: "Avenir";
+  cursor: pointer;
+}
+.contact__result-card {
+  border: 1px solid rgba(114, 90, 88, 0.2);
+  background-color: rgba(251, 250, 250, 0.35);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__result-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.contact__result-note {
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.85);
+  font-family: "Avenir";
+}
+.contact__result-price {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.95);
+  font-family: "Baskervville";
+}
+.contact__result-columns {
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 576px) {
+  .contact__result-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contact__result-columns h3 {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.95);
+  font-family: "Baskervville";
+  margin-bottom: 4px;
+}
+.contact__result-columns ul {
+  list-style: none;
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Avenir";
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contact__result-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+.contact__result-logo-image {
+  width: 72px;
+  height: auto;
+}
+.contact__result-logo {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.95);
+  font-family: "Baskervville";
+  line-height: 1;
+}
+.contact__result-brand {
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Avenir";
+}
+.contact__result-share {
+  min-width: 90px;
+}
+.contact__class-result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__class-result-talk {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.95);
+  font-family: "Baskervville";
+}
+.contact__class-result-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Avenir";
+}
+.contact__class-result-links li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact__signature {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(114, 90, 88, 0.2);
+  color: rgba(114, 90, 88, 0.9);
+}
+.contact__signature-logo {
+  display: block;
+  width: min(140px, 42vw);
+  height: auto;
+  margin-inline: auto;
+}
+.contact__signature-mark {
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1;
+}
+.contact__signature-name {
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+.contact__signature-note {
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Lora", "Georgia", serif;
+  margin-top: 4px;
+}
+.contact__signature-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  list-style: none;
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Lora", "Georgia", serif;
+  text-transform: lowercase;
+}
+@media (min-width: 576px) {
+  .contact {
+    padding-top: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .contact {
+    padding-top: 48px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
