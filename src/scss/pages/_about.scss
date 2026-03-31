@@ -4,8 +4,14 @@
 $about-shell-pink: #fbe7e4;
 $about-shell-bottom: 6rem;
 $about-shell-bottom-md: 7.5rem;
-$about-font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-$about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+$about-title-max: 5rem; // 80px
+$about-heading-48: 3rem; // 48px
+$about-btn-w: 10rem; // 160px
+$about-btn-label: #5e4a49;
+$about-media-w: 21.9375rem; // 351px Figma frame width
+$about-brands-max-w: 90rem; // 1440px Figma
+$about-brands-min-h: 22.375rem; // 358px
+$about-brands-gap: 2.75rem; // 44px
 
 .about {
   padding-top: 5.25rem;
@@ -38,46 +44,35 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
     margin-bottom: 0;
   }
 
+  // Figma: Baskervville 48px / 400 / 130% LH / 0 tracking / center
   &__eyebrow {
-    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
-    font-weight: 600;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: $color-accent;
     margin: 0 0 $spacing-sm;
+    font-family: $font-family-heading;
+    font-size: clamp(1.75rem, 4vw, $about-heading-48);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-align: center;
+    color: $color-accent;
   }
 
+  // Figma: Baskervville 80px / 400 / 130% LH / 13% tracking / center / uppercase
   &__title {
-    font-family: Baskervville;
-    font-size: clamp(2rem, 5.5vw, 3.75rem);
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    line-height: 1.15;
-    color: $color-main;
-    text-transform: uppercase;
-    padding-bottom: $spacing-sm;
     margin: 0;
+    font-family: $font-family-heading;
+    font-size: clamp(2.5rem, 10vw, $about-title-max);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0.13em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-main;
   }
 
   &__title-underline {
-    width: 200px;
-    height: 1px;
-    background-color: $color-accent;
-    border: 1px solid $color-accent;
-    margin: $spacing-sm auto 0;
-  }
-
-  &__intro {
-    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.1875rem);
-    font-weight: 300;
-    text-align: center;
-    color: $color-black;
-    max-width: 38rem;
-    margin: $spacing-xl auto 0;
-    line-height: 1.65;
-    padding: 0 $spacing-sm;
+    @include page-hero-h1-rule;
   }
 
   &__shell {
@@ -97,24 +92,23 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
     }
   }
 
+  // Figma portrait frame 351×424
   &__media {
     flex-shrink: 0;
-    width: 100%;
-    max-width: min(100%, 22.5rem);
+    width: $about-media-w;
+    max-width: 100%;
     margin-inline: auto;
     line-height: 0;
     background-color: rgba($color-black, 0.04);
 
     @include md {
-      width: 36%;
-      max-width: 320px;
       margin-inline: 0;
     }
 
     img {
       width: 100%;
       height: auto;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 351 / 424;
       object-fit: cover;
       display: block;
     }
@@ -128,28 +122,42 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
     min-width: 0;
   }
 
+  // Figma: Baskervville 48px / 400 / 130% LH / 0 tracking
   &__headline {
-    font-family: $about-font-display;
-    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
-    font-weight: 500;
-    color: $color-main;
-    line-height: 1.4;
     margin: 0 0 $spacing-lg;
+    font-family: $font-family-heading;
+    font-size: clamp(1.75rem, 4vw, $about-heading-48);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0;
+    color: $color-main;
   }
 
+  // Avenir Light 18px / 150% LH / 0 tracking — 常にちょうど 5 行（各行は折り返さない／狭い幅は横スクロール）
   &__text {
-    p {
-      font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: clamp(0.9375rem, 2vw, 1.0625rem);
-      font-weight: 400;
-      color: $color-dark-grey;
-      line-height: 1.75;
-      margin: 0 0 $spacing-md;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+    &-copy {
+      margin: 0;
+      width: max-content;
+      font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      font-style: normal;
+      line-height: 150%;
+      letter-spacing: 0;
+      color: $color-dark-grey;
     }
+  }
+
+  &__line {
+    display: block;
+    white-space: nowrap;
   }
 
   &__actions {
@@ -161,29 +169,39 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
     }
   }
 
+  // Figma: 160×62, padding 24×32, border 0.8px; label Baskervville 20px / 400 / 150% LH
   &__btn {
+    box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: $about-font-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: $color-main;
+    gap: 10px;
+    width: $about-btn-w;
+    max-width: 100%;
+    min-width: 160px;
+    min-height: 62px;
+    padding: 24px 32px;
+    font-family: $font-family-heading;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: $about-btn-label;
     background-color: transparent;
-    border: 1px solid $color-main;
+    border: 0.8px solid $color-brand;
     border-radius: 0;
-    padding: 14px 3rem;
-    min-width: 11rem;
     text-align: center;
     text-decoration: none;
+    white-space: nowrap;
     transition: background-color 0.2s ease;
 
     &:hover {
-      background-color: rgba($color-main, 0.06);
+      background-color: rgba($color-brand, 0.04);
     }
   }
 
+  // Figma: frame 1440×358, gap 44px（座標はキャンバス基準のため CSS では未使用）
   &__brands {
     background-color: $color-pale-white;
     padding: clamp(2.5rem, 6vw, 5rem) 0 $about-shell-bottom;
@@ -191,30 +209,47 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
     @include md {
       padding-bottom: $about-shell-bottom-md;
     }
+
+    .about__container {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: $about-brands-gap;
+      max-width: $about-brands-max-w;
+
+      @include md {
+        min-height: $about-brands-min-h;
+      }
+    }
   }
 
+  // Figma: Baskervville 48px / 400 / 130% LH / 0 tracking / center
   &__brands-title {
-    font-family: $about-font-display;
-    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
-    font-weight: 500;
+    margin: 0;
+    font-family: $font-family-heading;
+    font-size: clamp(1.75rem, 4vw, $about-heading-48);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0;
     text-align: center;
     color: $color-main;
-    margin: 0 0 $spacing-xl;
   }
 
   &__brands-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: $spacing-lg $spacing-md;
+    gap: $about-brands-gap;
     align-items: center;
     justify-items: center;
+    width: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
 
     @include md {
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: $spacing-xl $spacing-lg;
     }
   }
 

@@ -53,3 +53,26 @@
   color: $color;
   font-family: $family;
 }
+
+// Page hero <h1> + rule (matches Clarla Beauty / My Work treatment)
+@mixin page-hero-h1 {
+  display: inline-block;
+  font-family: $font-family-heading;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  line-height: 1.15;
+  color: $color-main;
+  padding-bottom: $spacing-sm;
+  margin: 0;
+}
+
+@mixin page-hero-h1-rule {
+  width: 200px;
+  height: 1px;
+  margin: $spacing-sm auto 0;
+  padding: 0;
+  border: 1px solid $color-accent;
+  background-color: $color-accent;
+}
