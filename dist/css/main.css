@@ -314,26 +314,33 @@ img {
   transform: scale(1.04);
 }
 .my-work__view-more {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Baskervville", "Georgia", serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: capitalize;
-  color: #191919;
-  background: transparent;
-  border: 1px solid #191919;
-  border-radius: 0;
+  gap: 10px;
+  width: 10.0625rem;
+  max-width: 100%;
+  min-width: 160px;
+  min-height: 62px;
   padding: 24px 32px;
-  min-width: 10.0625rem;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #725a58;
+  background: transparent;
+  border: 0.8px solid #725a58;
+  border-radius: 0;
   text-align: center;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
 }
 .my-work__view-more:hover {
-  background-color: rgba(25, 25, 25, 0.04);
+  background-color: rgba(114, 90, 88, 0.04);
 }
 
 .services {
@@ -483,19 +490,10 @@ img {
   font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 400;
+  font-style: normal;
   line-height: 1.2;
   color: #725a58;
   margin: 0 0 16px;
-  padding-bottom: 8px;
-}
-.services__name::after {
-  content: "";
-  display: block;
-  width: 200px;
-  height: 1px;
-  margin-top: 8px;
-  border: 1px solid #e3b6b1;
-  background-color: #e3b6b1;
 }
 .services__meta {
   list-style: none;
@@ -511,9 +509,9 @@ img {
   gap: 8px;
 }
 .services__meta-text {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #4a4a4a;
   line-height: 1.55;
 }
@@ -532,19 +530,24 @@ img {
   display: block;
 }
 .services__tagline {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums proportional-nums;
   color: #4a4a4a;
   margin: 0 0 16px;
-  line-height: 1.65;
 }
 .services__text {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: #4a4a4a;
-  line-height: 1.7;
   margin: 0 0 24px;
 }
 .services__actions {
@@ -553,26 +556,34 @@ img {
   padding-top: 4px;
 }
 .services__btn {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Baskervville", "Georgia", serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: capitalize;
-  color: #191919;
-  background-color: transparent;
-  border: 1px solid #191919;
-  border-radius: 0;
+  gap: 10px;
+  width: 10.6875rem;
+  max-width: 100%;
+  min-width: 160px;
+  min-height: 62px;
   padding: 24px 32px;
-  min-width: 10.0625rem;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #5e4a49;
+  background-color: transparent;
+  border: 0.8px solid #5e4a49;
+  border-radius: 0;
+  opacity: 1;
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   transition: background-color 0.2s ease;
 }
 .services__btn:hover {
-  background-color: rgba(25, 25, 25, 0.04);
+  background-color: rgba(94, 74, 73, 0.04);
 }
 
 .classes {
@@ -616,19 +627,24 @@ img {
 }
 .classes__title-wrap {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 .classes__title {
-  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 26.0625rem;
+  min-height: 4.875rem;
+  margin: 0 auto;
   font-family: "Baskervville", "Georgia", serif;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.15;
   color: #725a58;
-  padding-bottom: 8px;
-  margin: 0;
+  opacity: 1;
 }
 .classes__title-underline {
   width: 200px;
@@ -639,20 +655,26 @@ img {
   background-color: #e3b6b1;
 }
 .classes__intro {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.125rem;
-  font-weight: 500;
-  text-align: center;
-  color: #535353;
-  max-width: 38rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 27.3125rem;
+  min-height: 3.375rem;
   margin: 0 auto;
-  line-height: 1.7;
-  padding: 0 8px;
+  padding: 0 16px;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: center;
+  color: #191919;
+  opacity: 1;
 }
 .classes__list {
   display: flex;
   flex-direction: column;
-  gap: 3.75rem;
+  gap: 9rem;
   margin: 0;
   padding: 0;
 }
@@ -674,30 +696,36 @@ img {
 }
 .classes__media {
   width: 100%;
+  max-width: 20.5rem;
   flex-shrink: 0;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   line-height: 0;
   background-color: #fae9e7;
+  overflow: hidden;
+  border-radius: 0;
 }
 @media (min-width: 768px) {
   .classes__media {
-    width: 42%;
-    max-width: 400px;
-    align-self: stretch;
+    width: 20.5rem;
+    max-width: 20.5rem;
+    margin: 0;
+    align-self: flex-start;
   }
 }
 .classes__media img {
   width: 100%;
-  height: 100%;
-  min-height: 280px;
+  height: auto;
+  aspect-ratio: 328/500;
   object-fit: cover;
+  object-position: center;
   display: block;
-  vertical-align: top;
 }
 @media (min-width: 768px) {
   .classes__media img {
-    min-height: 100%;
+    width: 20.5rem;
+    height: 31.25rem;
+    aspect-ratio: auto;
   }
 }
 .classes__body {
@@ -715,29 +743,57 @@ img {
   }
 }
 .classes__name {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.35rem, 2.5vw, 32px);
-  font-weight: 500;
-  color: #725a58;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: none;
   margin: 0 0 16px;
-  line-height: 1.35;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 36px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #725a58;
+  opacity: 1;
+}
+.classes__name-num {
+  font-family: inherit;
+  font-size: 1.05em;
+  font-weight: 400;
+  font-variant-numeric: lining-nums proportional-nums;
+  line-height: inherit;
+  display: inline;
+  vertical-align: baseline;
 }
 .classes__meta {
   list-style: none;
   margin: 0 0 24px;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 32px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #535353;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: clamp(16px, 3vw, 32px);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 .classes__meta li {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.classes__meta-text {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #535353;
 }
 .classes__meta-icon {
   display: flex;
@@ -759,30 +815,37 @@ img {
   margin-bottom: 24px;
 }
 .classes__section-title {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums proportional-nums;
   margin: 0 0 8px;
   color: #725a58;
-  letter-spacing: 0.03em;
 }
 .classes__text {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: #535353;
-  line-height: 1.7;
   margin: 0;
-  font-size: 1rem;
-  font-weight: 500;
 }
 .classes__bullets {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding-left: 1.125rem;
   color: #535353;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.65;
-  list-style-type: square;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0;
+  list-style-type: disc;
 }
 .classes__bullets li {
   margin-bottom: 4px;
@@ -794,22 +857,31 @@ img {
   padding-top: 8px;
 }
 .classes__btn {
-  display: inline-block;
-  font-family: "Lora", "Georgia", serif;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: #191919;
-  background-color: #fff;
-  border: 1px solid #191919;
-  border-radius: 2px;
-  padding: 0.65rem 2rem;
-  min-width: 9.5rem;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 160px;
+  min-width: 160px;
+  min-height: 62px;
+  padding: 24px 32px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: capitalize;
+  color: #5e4a49;
+  background-color: transparent;
+  border: 0.8px solid #5e4a49;
+  border-radius: 0;
+  opacity: 1;
   text-align: center;
-  transition: background-color 0.2s, color 0.2s;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 .classes__btn:hover {
-  background-color: rgba(25, 25, 25, 0.04);
+  background-color: rgba(94, 74, 73, 0.04);
 }
 
 .beauty-tips {
@@ -851,16 +923,18 @@ img {
   margin-bottom: 24px;
 }
 .beauty-tips__title {
-  display: inline-block;
-  font-family: "Baskervville", "Georgia", serif;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.15;
-  color: #725a58;
-  padding-bottom: 8px;
+  box-sizing: border-box;
+  width: 100%;
   margin: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #725a58;
 }
 .beauty-tips__title-underline {
   width: 200px;
@@ -871,15 +945,18 @@ img {
   background-color: #e3b6b1;
 }
 .beauty-tips__intro {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto 32px;
+  padding: 0 16px;
   font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.1875rem);
+  font-size: 18px;
   font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
   text-align: center;
   color: #191919;
-  max-width: 38rem;
-  margin: 0 auto 32px;
-  line-height: 1.65;
-  padding: 0 8px;
 }
 .beauty-tips__hero-cta {
   text-align: center;
@@ -889,21 +966,31 @@ img {
 }
 .beauty-tips__filters {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 8px 24px;
-  margin: 0 0 32px;
+  gap: 32px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 1.9375rem;
+  margin: 0 auto 32px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 .beauty-tips__filter {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
   color: #888888;
   background: none;
   border: none;
-  padding: 0.35rem 0.25rem;
+  padding: 0;
+  white-space: nowrap;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
@@ -914,7 +1001,7 @@ img {
 }
 .beauty-tips__filter.is-active {
   color: #191919;
-  font-weight: 600;
+  font-weight: 400;
   border-bottom-color: #725a58;
 }
 .beauty-tips__grid {
@@ -975,13 +1062,6 @@ img {
   object-fit: cover;
   display: block;
 }
-.beauty-tips__thumb::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(25, 25, 25, 0.55) 0%, transparent 45%);
-  pointer-events: none;
-}
 .beauty-tips__play {
   position: absolute;
   top: 8px;
@@ -1005,46 +1085,44 @@ img {
   border-width: 5px 0 5px 8px;
   border-color: transparent transparent transparent #725a58;
 }
-.beauty-tips__caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  padding: 16px 8px 8px;
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 1.35;
-  color: #fff;
-  display: block;
-  text-shadow: 0 1px 3px rgba(25, 25, 25, 0.45);
-  pointer-events: none;
-}
 .beauty-tips__more-wrap {
   text-align: center;
   margin-top: clamp(2.5rem, 6vw, 4rem);
 }
 .beauty-tips__btn {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: #725a58;
+  gap: 10px;
+  width: 10.0625rem;
+  max-width: 100%;
+  min-width: 160px;
+  min-height: 62px;
+  padding: 24px 32px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #5e4a49;
   background-color: transparent;
-  border: 1px solid #725a58;
+  border: 0.8px solid #5e4a49;
   border-radius: 0;
-  padding: 14px 3rem;
-  min-width: 11rem;
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   transition: background-color 0.2s ease;
 }
 .beauty-tips__btn:hover {
-  background-color: rgba(114, 90, 88, 0.06);
+  background-color: rgba(94, 74, 73, 0.04);
+}
+.beauty-tips__btn--hero {
+  width: 13.125rem;
+  min-height: 56px;
+  padding: 20px 28px;
+  font-size: 18px;
 }
 
 .about {
@@ -1080,25 +1158,27 @@ img {
   margin-bottom: 0;
 }
 .about__eyebrow {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #e3b6b1;
   margin: 0 0 8px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-align: center;
+  color: #e3b6b1;
 }
 .about__title {
-  display: inline-block;
-  font-family: "Baskervville", "Georgia", serif;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.15;
-  color: #725a58;
-  padding-bottom: 8px;
   margin: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #725a58;
 }
 .about__title-underline {
   width: 200px;
@@ -1107,17 +1187,6 @@ img {
   padding: 0;
   border: 1px solid #e3b6b1;
   background-color: #e3b6b1;
-}
-.about__intro {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.1875rem);
-  font-weight: 300;
-  text-align: center;
-  color: #191919;
-  max-width: 38rem;
-  margin: 32px auto 0;
-  line-height: 1.65;
-  padding: 0 8px;
 }
 .about__shell {
   background-color: #fbe7e4;
@@ -1137,23 +1206,21 @@ img {
 }
 .about__media {
   flex-shrink: 0;
-  width: 100%;
-  max-width: min(100%, 22.5rem);
+  width: 21.9375rem;
+  max-width: 100%;
   margin-inline: auto;
   line-height: 0;
   background-color: rgba(25, 25, 25, 0.04);
 }
 @media (min-width: 768px) {
   .about__media {
-    width: 36%;
-    max-width: 320px;
     margin-inline: 0;
   }
 }
 .about__media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 351/424;
   object-fit: cover;
   display: block;
 }
@@ -1165,23 +1232,36 @@ img {
   min-width: 0;
 }
 .about__headline {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
-  font-weight: 500;
-  color: #725a58;
-  line-height: 1.4;
   margin: 0 0 24px;
-}
-.about__text p {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 400;
-  color: #535353;
-  line-height: 1.75;
-  margin: 0 0 16px;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: #725a58;
 }
-.about__text p:last-child {
-  margin-bottom: 0;
+.about__text {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.about__text-copy {
+  margin: 0;
+  width: max-content;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #535353;
+}
+.about__line {
+  display: block;
+  white-space: nowrap;
 }
 .about__actions {
   margin-top: 32px;
@@ -1193,25 +1273,33 @@ img {
   }
 }
 .about__btn {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: #725a58;
+  gap: 10px;
+  width: 10rem;
+  max-width: 100%;
+  min-width: 160px;
+  min-height: 62px;
+  padding: 24px 32px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #5e4a49;
   background-color: transparent;
-  border: 1px solid #725a58;
+  border: 0.8px solid #191919;
   border-radius: 0;
-  padding: 14px 3rem;
-  min-width: 11rem;
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   transition: background-color 0.2s ease;
 }
 .about__btn:hover {
-  background-color: rgba(114, 90, 88, 0.06);
+  background-color: rgba(25, 25, 25, 0.04);
 }
 .about__brands {
   background-color: #f8f6f4;
@@ -1222,20 +1310,37 @@ img {
     padding-bottom: 7.5rem;
   }
 }
+.about__brands .about__container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2.75rem;
+  max-width: 90rem;
+}
+@media (min-width: 768px) {
+  .about__brands .about__container {
+    min-height: 22.375rem;
+  }
+}
 .about__brands-title {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
-  font-weight: 500;
+  margin: 0;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
   text-align: center;
   color: #725a58;
-  margin: 0 0 32px;
 }
 .about__brands-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px 16px;
+  gap: 2.75rem;
   align-items: center;
   justify-items: center;
+  width: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1243,7 +1348,6 @@ img {
 @media (min-width: 768px) {
   .about__brands-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 32px 24px;
   }
 }
 .about__brand {

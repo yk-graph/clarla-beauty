@@ -8,6 +8,7 @@ $my-work-font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 $my-work-title-max: 5rem; // 80px — Figma hero
 $my-work-gallery-max: 63.875rem; // 1022px
 $my-work-tabs-width: 30.25rem; // 484px
+$my-work-view-more-w: 10.0625rem; // 161px
 
 .my-work {
   padding-top: 5.25rem;
@@ -44,6 +45,10 @@ $my-work-tabs-width: 30.25rem; // 484px
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: $color-main;
+  }
+
+  &__title-underline {
+    @include page-hero-h1-rule;
   }
 
   &__subtitle {
@@ -173,30 +178,35 @@ $my-work-tabs-width: 30.25rem; // 484px
     }
   }
 
-  // Figma buttons dark default: ~161×62, padding 24 / 32, thin border
+  // Figma: 161×62, padding 24×32, border 0.8px, Baskervville 20px / 400 / 150% LH, #725A58
   &__view-more {
+    box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: $font-family-heading;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: capitalize;
-    color: $color-brand;
-    background: transparent;
-    border: 1px solid $color-brand;
-    border-radius: 0;
+    gap: 10px;
+    width: $my-work-view-more-w;
+    max-width: 100%;
+    min-width: 160px;
+    min-height: 62px;
     padding: 24px 32px;
-    min-width: 10.0625rem;
+    font-family: $font-family-heading;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    letter-spacing: 0;
+    color: $color-main;
+    background: transparent;
+    border: 0.8px solid $color-main;
+    border-radius: 0;
     text-align: center;
     text-decoration: none;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
 
     &:hover {
-      background-color: rgba($color-brand, 0.04);
+      background-color: rgba($color-main, 0.04);
     }
   }
 }
