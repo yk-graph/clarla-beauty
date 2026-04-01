@@ -5,6 +5,10 @@ $class-detail-cream: #f8f6f4;
 $class-detail-shell: #f9e7e7;
 $class-detail-card-bg: #fdf2f2;
 $class-detail-btn: #5e4a49;
+// Figma: フレーム 1024×1864 / top 60 / gap 60 / 上境界 1px（left 208 は 1440 上で中央相当）
+$class-detail-frame-max: 64rem; // 1024px
+$class-detail-shell-padding-top: 60px;
+$class-detail-column-gap: 60px;
 
 // Classes「View Class」詳細（ヘッダー・フッターは共通のまま）
 .class-detail {
@@ -73,15 +77,30 @@ $class-detail-btn: #5e4a49;
   }
 
   &__shell {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: clip;
     background-color: $class-detail-shell;
-    padding: $spacing-xl 0 $spacing-2xl;
+    border-top: 1px solid rgba($color-main, 0.18);
+    padding: $class-detail-shell-padding-top 0 $spacing-2xl;
 
     @include md {
-      padding: $spacing-2xl 0 $spacing-4xl;
+      padding: $class-detail-shell-padding-top 0 $spacing-4xl;
     }
   }
 
+  // ピンク内 2 カラムを Figma どおり最大 1024px で中央寄せ（left 208 ≒ 1440 上で中央）
+  &__shell > &__container.class-detail__layout {
+    max-width: $class-detail-frame-max;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
   &__layout {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: $spacing-xl;
@@ -89,7 +108,7 @@ $class-detail-btn: #5e4a49;
     @include md {
       flex-direction: row;
       align-items: flex-start;
-      gap: $spacing-2xl;
+      gap: $class-detail-column-gap;
     }
   }
 
@@ -290,6 +309,17 @@ $class-detail-btn: #5e4a49;
 
   .class-detail__main {
     text-align: left;
+    // 右カラム幅を基準に cqi（Overview / リストの可変サイズ — 画像列とのバランス）
+    container-type: inline-size;
+    container-name: class-detail-main;
+  }
+
+  @include md {
+    .class-detail__sidebar {
+      flex-basis: 36%;
+      width: 36%;
+      max-width: 24rem;
+    }
   }
 
   .class-detail__section-title {
@@ -317,6 +347,37 @@ $class-detail-btn: #5e4a49;
     margin-bottom: 0;
   }
 
+  // Overview を常に 2 行 — 字詰めは .class-detail__main の幅基準（画像 : 本文 ≈ 調整しやすい）
+  .class-detail__overview--two-lines {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+    font-size: clamp(10px, 2.65cqi + 0.16rem, 17px);
+
+    @supports not (font-size: 1cqi) {
+      font-size: clamp(10px, 1.9vw + 0.32rem, 17px);
+    }
+  }
+
+  // 1-on-1 など: Overview を常に 3 行（Figma body 18px 寄せ・狭い幅だけ字詰め）
+  .class-detail__overview--three-lines {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+    font-size: clamp(11px, 2.9cqi + 0.12rem, 18px);
+
+    @supports not (font-size: 1cqi) {
+      font-size: clamp(11px, 2.15vw + 0.38rem, 18px);
+    }
+  }
+
+  .class-detail__overview-line {
+    display: block;
+    white-space: nowrap;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .class-detail__section-title + .class-detail__curriculum {
     margin-top: $spacing-sm;
   }
@@ -332,13 +393,21 @@ $class-detail-btn: #5e4a49;
   }
 
   .class-detail__list {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
     font-size: 18px;
     font-weight: 300;
     line-height: 1.5;
     letter-spacing: 0;
+    list-style-position: outside;
+    padding-left: 1.35rem;
 
     li {
       display: list-item;
+      padding-left: 0.15em;
+      box-sizing: border-box;
+      max-width: 100%;
     }
   }
 }
@@ -363,6 +432,28 @@ $class-detail-btn: #5e4a49;
 // Workshop / Beginner: 写真どおりタイトルケース・中央・複数行可
 .class-detail--workshop,
 .class-detail--beginner {
+  // カリキュラムの特定 li：2 行固定 — 点と左端をそろえ、ピンク背景からはみ出さない
+  .class-detail__list-item--fit {
+    list-style-position: outside;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    font-size: clamp(8px, 2.05cqi + 0.14rem, 16px);
+
+    @supports not (font-size: 1cqi) {
+      font-size: clamp(8px, 1.65vw + 0.26rem, 16px);
+    }
+  }
+
+  .class-detail__list-line {
+    display: block;
+    white-space: nowrap;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-inline-start: 0;
+    margin-inline-start: 0;
+  }
+
   .class-detail__card-title {
     text-align: center;
     text-transform: none;

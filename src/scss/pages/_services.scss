@@ -15,6 +15,13 @@ $services-shell-pad-bottom: 6rem;
 $services-shell-pad-bottom-md: 7.5rem;
 $services-btn-w: 10.6875rem; // 171px
 $services-btn-label: #5e4a49;
+// Figma Services フレーム: width 1440 / height 1565 / top 479（ピンク開始 Y）/ opacity 1
+$services-layout-max-w: 90rem; // 1440px
+$services-shell-min-h-lg: 1565px;
+// Figma Services タイトル（ヒーロー）: 1440×270 / padding 24 上下 / gap 32（top 196 はキャンバス座標のため main 上余白には使わない）
+$services-hero-h-lg: 270px;
+$services-hero-pad-y-lg: 24px;
+$services-hero-gap-lg: 32px;
 
 .services {
   padding-top: 5.25rem;
@@ -25,12 +32,42 @@ $services-btn-label: #5e4a49;
 
   padding-bottom: 0;
 
+  @include lg {
+    box-sizing: border-box;
+    max-width: $services-layout-max-w;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &__hero {
     background-color: $services-hero-bg;
     padding: $spacing-xl 0 $spacing-lg;
 
     @include md {
       padding: $spacing-2xl 0 $spacing-xl;
+    }
+
+    @include lg {
+      box-sizing: border-box;
+      width: 100%;
+      height: $services-hero-h-lg;
+      min-height: $services-hero-h-lg;
+      padding: $services-hero-pad-y-lg 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+  }
+
+  // タイトル行とイントロの間隔（Figma gap 32）
+  &__hero &__container {
+    @include lg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $services-hero-gap-lg;
     }
   }
 
@@ -40,6 +77,11 @@ $services-btn-label: #5e4a49;
 
     @include md {
       padding-bottom: $services-shell-pad-bottom-md;
+    }
+
+    @include lg {
+      box-sizing: border-box;
+      min-height: $services-shell-min-h-lg;
     }
   }
 
@@ -59,6 +101,10 @@ $services-btn-label: #5e4a49;
   &__title-wrap {
     text-align: center;
     margin-bottom: $spacing-xl;
+
+    @include lg {
+      margin-bottom: 0;
+    }
   }
 
   // Figma Services_desktop: Baskerville 80px / 400 / 130% LH / 13% / #725A58

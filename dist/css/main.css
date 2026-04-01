@@ -356,6 +356,15 @@ img {
 .services {
   padding-bottom: 0;
 }
+@media (min-width: 992px) {
+  .services {
+    box-sizing: border-box;
+    max-width: 90rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .services__hero {
   background-color: #f8f6f4;
   padding: 32px 0 24px;
@@ -365,6 +374,27 @@ img {
     padding: 40px 0 32px;
   }
 }
+@media (min-width: 992px) {
+  .services__hero {
+    box-sizing: border-box;
+    width: 100%;
+    height: 270px;
+    min-height: 270px;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+@media (min-width: 992px) {
+  .services__hero .services__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+}
 .services__shell {
   background-color: #fbe7e4;
   padding-bottom: 6rem;
@@ -372,6 +402,12 @@ img {
 @media (min-width: 768px) {
   .services__shell {
     padding-bottom: 7.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .services__shell {
+    box-sizing: border-box;
+    min-height: 1565px;
   }
 }
 .services__container {
@@ -392,6 +428,11 @@ img {
 .services__title-wrap {
   text-align: center;
   margin-bottom: 32px;
+}
+@media (min-width: 992px) {
+  .services__title-wrap {
+    margin-bottom: 0;
+  }
 }
 .services__title {
   margin: 0;
@@ -601,6 +642,17 @@ img {
 .classes {
   padding-bottom: 0;
 }
+@media (min-width: 992px) {
+  .classes {
+    box-sizing: border-box;
+    max-width: 90rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 2220px;
+    transform: translateX(-2px);
+  }
+}
 .classes__hero {
   background-color: #f8f6f4;
   padding: 32px 0 24px;
@@ -668,7 +720,6 @@ img {
   margin: 0 auto;
   padding: 0 16px;
   font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
   font-weight: 300;
   font-style: normal;
   line-height: 1.5;
@@ -676,6 +727,18 @@ img {
   text-align: center;
   color: #191919;
   opacity: 1;
+  container-type: inline-size;
+  container-name: classes-intro;
+  font-size: clamp(11px, 5.2cqi + 0.2rem, 18px);
+}
+@supports not (font-size: 1cqi) {
+  .classes__intro {
+    font-size: clamp(11px, 3.2vw + 0.35rem, 18px);
+  }
+}
+.classes__intro-line {
+  display: block;
+  white-space: nowrap;
 }
 .classes__list {
   display: flex;
@@ -961,15 +1024,28 @@ img {
   vertical-align: baseline;
 }
 .class-detail__shell {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: clip;
   background-color: #f9e7e7;
-  padding: 32px 0 40px;
+  border-top: 1px solid rgba(114, 90, 88, 0.18);
+  padding: 60px 0 40px;
 }
 @media (min-width: 768px) {
   .class-detail__shell {
-    padding: 40px 0 64px;
+    padding: 60px 0 64px;
   }
 }
+.class-detail__shell > .class-detail__container.class-detail__layout {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
 .class-detail__layout {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -978,7 +1054,7 @@ img {
   .class-detail__layout {
     flex-direction: row;
     align-items: flex-start;
-    gap: 40px;
+    gap: 60px;
   }
 }
 .class-detail__sidebar {
@@ -1159,6 +1235,17 @@ img {
 .class-detail--workshop .class-detail__main,
 .class-detail--beginner .class-detail__main {
   text-align: left;
+  container-type: inline-size;
+  container-name: class-detail-main;
+}
+@media (min-width: 768px) {
+  .class-detail--one-to-one .class-detail__sidebar,
+  .class-detail--workshop .class-detail__sidebar,
+  .class-detail--beginner .class-detail__sidebar {
+    flex-basis: 36%;
+    width: 36%;
+    max-width: 24rem;
+  }
 }
 .class-detail--one-to-one .class-detail__section-title,
 .class-detail--workshop .class-detail__section-title,
@@ -1189,6 +1276,44 @@ img {
   text-align: left;
   margin-bottom: 0;
 }
+.class-detail--one-to-one .class-detail__overview--two-lines,
+.class-detail--workshop .class-detail__overview--two-lines,
+.class-detail--beginner .class-detail__overview--two-lines {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  font-size: clamp(10px, 2.65cqi + 0.16rem, 17px);
+}
+@supports not (font-size: 1cqi) {
+  .class-detail--one-to-one .class-detail__overview--two-lines,
+  .class-detail--workshop .class-detail__overview--two-lines,
+  .class-detail--beginner .class-detail__overview--two-lines {
+    font-size: clamp(10px, 1.9vw + 0.32rem, 17px);
+  }
+}
+.class-detail--one-to-one .class-detail__overview--three-lines,
+.class-detail--workshop .class-detail__overview--three-lines,
+.class-detail--beginner .class-detail__overview--three-lines {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  font-size: clamp(11px, 2.9cqi + 0.12rem, 18px);
+}
+@supports not (font-size: 1cqi) {
+  .class-detail--one-to-one .class-detail__overview--three-lines,
+  .class-detail--workshop .class-detail__overview--three-lines,
+  .class-detail--beginner .class-detail__overview--three-lines {
+    font-size: clamp(11px, 2.15vw + 0.38rem, 18px);
+  }
+}
+.class-detail--one-to-one .class-detail__overview-line,
+.class-detail--workshop .class-detail__overview-line,
+.class-detail--beginner .class-detail__overview-line {
+  display: block;
+  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 .class-detail--one-to-one .class-detail__section-title + .class-detail__curriculum,
 .class-detail--workshop .class-detail__section-title + .class-detail__curriculum,
 .class-detail--beginner .class-detail__section-title + .class-detail__curriculum {
@@ -1208,15 +1333,23 @@ img {
 .class-detail--one-to-one .class-detail__list,
 .class-detail--workshop .class-detail__list,
 .class-detail--beginner .class-detail__list {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: 0;
+  list-style-position: outside;
+  padding-left: 1.35rem;
 }
 .class-detail--one-to-one .class-detail__list li,
 .class-detail--workshop .class-detail__list li,
 .class-detail--beginner .class-detail__list li {
   display: list-item;
+  padding-left: 0.15em;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .class-detail--one-to-one .class-detail__card-title {
@@ -1232,6 +1365,29 @@ img {
   text-transform: none;
 }
 
+.class-detail--workshop .class-detail__list-item--fit,
+.class-detail--beginner .class-detail__list-item--fit {
+  list-style-position: outside;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  font-size: clamp(8px, 2.05cqi + 0.14rem, 16px);
+}
+@supports not (font-size: 1cqi) {
+  .class-detail--workshop .class-detail__list-item--fit,
+  .class-detail--beginner .class-detail__list-item--fit {
+    font-size: clamp(8px, 1.65vw + 0.26rem, 16px);
+  }
+}
+.class-detail--workshop .class-detail__list-line,
+.class-detail--beginner .class-detail__list-line {
+  display: block;
+  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-inline-start: 0;
+  margin-inline-start: 0;
+}
 .class-detail--workshop .class-detail__card-title,
 .class-detail--beginner .class-detail__card-title {
   text-align: center;

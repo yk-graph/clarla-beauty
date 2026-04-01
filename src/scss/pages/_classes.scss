@@ -10,6 +10,10 @@ $classes-hero-title-max: 5rem; // 80px
 $classes-media-width: 20.5rem; // 328px
 $classes-media-height: 31.25rem; // 500px
 $classes-btn-label: #5e4a49;
+// Figma Classes フレーム: width 1440 / height 2220 / top 448 / left -2 / opacity 1（top はキャンバス座標のため main 余白には使わない）
+$classes-layout-max-w: 90rem; // 1440px
+$classes-layout-min-h-lg: 2220px;
+$classes-layout-nudge-x: -2px; // left -2
 
 .classes {
   padding-top: 5.25rem;
@@ -19,6 +23,16 @@ $classes-btn-label: #5e4a49;
   }
 
   padding-bottom: 0;
+
+  @include lg {
+    box-sizing: border-box;
+    max-width: $classes-layout-max-w;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: $classes-layout-min-h-lg;
+    transform: translateX($classes-layout-nudge-x);
+  }
 
   &__hero {
     background-color: $classes-page-cream;
@@ -75,7 +89,7 @@ $classes-btn-label: #5e4a49;
     @include page-hero-h1-rule;
   }
 
-  // Figma: 437×54, Avenir Light 18px / 150% LH
+  // Figma: 437×54, Avenir Light 18px / 150% LH — 常に 2 行（行内は折り返さない／幅に応じて字詰め）
   &__intro {
     box-sizing: border-box;
     width: 100%;
@@ -84,7 +98,6 @@ $classes-btn-label: #5e4a49;
     margin: 0 auto;
     padding: 0 $spacing-md;
     font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 18px;
     font-weight: 300;
     font-style: normal;
     line-height: 1.5;
@@ -92,6 +105,18 @@ $classes-btn-label: #5e4a49;
     text-align: center;
     color: $color-black;
     opacity: 1;
+    container-type: inline-size;
+    container-name: classes-intro;
+    font-size: clamp(11px, 5.2cqi + 0.2rem, 18px);
+
+    @supports not (font-size: 1cqi) {
+      font-size: clamp(11px, 3.2vw + 0.35rem, 18px);
+    }
+
+    &-line {
+      display: block;
+      white-space: nowrap;
+    }
   }
 
   &__list {
