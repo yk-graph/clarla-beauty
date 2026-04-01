@@ -1,8 +1,8 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
-$my-work-bg-page: #f8f6f4;
-$my-work-bg-pink: #f9f1f1;
+$my-work-bg-page: $color-pale-white; // 他ページのヒーロー／クリームと同じ #f8f6f4
+$my-work-bg-pink: #fbe7e4; // Services / About / Beauty Tips のシェルと同じ
 $my-work-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 $my-work-font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 $my-work-title-max: 5rem; // 80px — Figma hero
