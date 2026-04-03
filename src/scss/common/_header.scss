@@ -9,6 +9,7 @@
   background-color: var(--snow-white);
   z-index: 100;
   padding: $spacing-md;
+  transition: transform 0.3s ease;
 
   @include md {
     padding: $spacing-md $spacing-2xl;
@@ -16,6 +17,10 @@
 
   @include xl {
     padding: $spacing-xl $spacing-2xl;
+  }
+
+  &.is-scrolled {
+    animation: headerSlide 0.6s ease;
   }
 
   &__inner {
@@ -30,10 +35,19 @@
     height: 80px;
     width: auto;
     margin: 0;
+    transition: height 0.3s ease;
 
     @include xl {
       height: 120px;
       margin: 0 $spacing-5xl;
+    }
+
+    .is-scrolled & {
+      height: 60px;
+
+      @include xl {
+        height: 40px;
+      }
     }
   }
 
@@ -128,5 +142,24 @@
     @include xl {
       display: none;
     }
+  }
+}
+
+@keyframes headerSlide {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  51% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
