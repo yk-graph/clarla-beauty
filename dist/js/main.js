@@ -62,6 +62,13 @@ if (hamburger && nav) {
     nav.classList.toggle('is-open')
     hamburger.classList.toggle('is-active')
   })
+
+  nav.querySelectorAll('.header__nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open')
+      hamburger.classList.remove('is-active')
+    })
+  })
 }
 
 // Contact form handling
