@@ -5,11 +5,14 @@ $classes-shell-pink: $color-light-pink;
 $classes-page-cream: #f8f6f4;
 $classes-text-muted: $color-dark-grey;
 $classes-card-gap: 9rem;
+$classes-card-gap-mobile: 30px; // モバイル: 前カードのボタン〜次カードの写真
 $classes-hero-title-max: 5rem; // 80px
 // Figma class card image (Frame 430)
 $classes-media-width: 20.5rem; // 328px
 $classes-media-height: 31.25rem; // 500px
 $classes-btn-label: #5e4a49;
+// モバイル: 写真下〜本文（説明）開始までの空き
+$classes-mobile-gap-btn-photo: 48px;
 // Figma Classes フレーム: width 1440 / height 2220 / top 448 / left -2 / opacity 1（top はキャンバス座標のため main 余白には使わない）
 $classes-layout-max-w: 90rem; // 1440px
 $classes-layout-min-h-lg: 2220px;
@@ -51,6 +54,14 @@ $classes-layout-nudge-x: -2px; // left -2
     padding-top: $spacing-lg;
     padding-bottom: 0;
 
+    // モバイル: 写真を画面端まで（横パディングなし）。本文は &__body の横 padding で確保。
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      padding-left: 0;
+      padding-right: 0;
+      // 1枚目の写真の上に見えていたシェル色の余白をなくす
+      padding-top: 0;
+    }
+
     @include md {
       padding-top: $spacing-xl;
     }
@@ -84,7 +95,7 @@ $classes-layout-nudge-x: -2px; // left -2
     @include page-hero-h1-rule;
   }
 
-  // Figma: 437×54, Avenir Light 18px / 150% LH — 常に 2 行（行内は折り返さない／幅に応じて字詰め）
+  // ウェブ（md+）: 1行目 We…to／2行目 future…（各スパンを nowrap で常に2行）｜ モバイル: 1行目 We…from／2行目 beginners…
   &__intro {
     box-sizing: border-box;
     width: 100%;
@@ -108,8 +119,35 @@ $classes-layout-nudge-x: -2px; // left -2
       font-size: clamp(11px, 3.2vw + 0.35rem, 18px);
     }
 
-    &-line {
+    @include md {
+      max-width: 33.4375rem; // Figma ウェブ幅 ~535px — 2行 nowrap が収まるよう拡張
+    }
+  }
+
+  &__intro-stack {
+    &--mobile {
       display: block;
+
+      @include md {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include md {
+        display: block;
+      }
+    }
+  }
+
+  &__intro-line {
+    display: block;
+  }
+
+  &__intro-stack--desktop &__intro-line {
+    @include md {
       white-space: nowrap;
     }
   }
@@ -117,9 +155,13 @@ $classes-layout-nudge-x: -2px; // left -2
   &__list {
     display: flex;
     flex-direction: column;
-    gap: $classes-card-gap;
+    gap: $classes-card-gap-mobile;
     margin: 0;
     padding: 0;
+
+    @include md {
+      gap: $classes-card-gap;
+    }
   }
 
   &__card {
@@ -140,9 +182,9 @@ $classes-layout-nudge-x: -2px; // left -2
 
   &__media {
     width: 100%;
-    max-width: $classes-media-width;
+    max-width: none;
     flex-shrink: 0;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     line-height: 0;
     background-color: $classes-shell-pink;
@@ -152,7 +194,6 @@ $classes-layout-nudge-x: -2px; // left -2
     @include md {
       width: $classes-media-width;
       max-width: $classes-media-width;
-      margin: 0;
       align-self: flex-start;
     }
 
@@ -177,6 +218,10 @@ $classes-layout-nudge-x: -2px; // left -2
     background-color: $classes-shell-pink;
     padding: $spacing-lg $spacing-md $spacing-xl;
     text-align: left;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      padding: $classes-mobile-gap-btn-photo $spacing-md $spacing-xl;
+    }
 
     @include md {
       padding: $spacing-xl $spacing-xl $spacing-xl $spacing-2xl;
@@ -219,13 +264,19 @@ $classes-layout-nudge-x: -2px; // left -2
     margin: 0 0 $spacing-lg;
     padding: 0;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    row-gap: $spacing-sm;
     column-gap: clamp($spacing-md, 3vw, $spacing-xl);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+
+    @include md {
+      flex-wrap: nowrap;
+      row-gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
   }
 
   &__meta li {
@@ -310,11 +361,17 @@ $classes-layout-nudge-x: -2px; // left -2
     }
   }
 
-  // スクリーンショット：本文カラム左寄せ・ボタンは左下（中央揃えではない）
   &__actions {
     text-align: left;
     margin-top: $spacing-md;
     padding-top: $spacing-sm;
+
+    // モバイル: View Class 中央寄せ
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      text-align: center;
+      padding-top: $spacing-xs;
+      margin-top: $spacing-sm;
+    }
   }
 
   &__btn {
@@ -323,10 +380,12 @@ $classes-layout-nudge-x: -2px; // left -2
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: auto;
+    // モバイル（Figma）: 328×53 目安・padding 20×32・枠 0.8px
+    width: 100%;
+    max-width: 328px;
     min-width: 160px;
-    min-height: 62px;
-    padding: 24px 32px;
+    min-height: 53px;
+    padding: 20px 32px;
     white-space: nowrap;
     font-family: $font-family-heading;
     font-size: 20px;
@@ -340,12 +399,20 @@ $classes-layout-nudge-x: -2px; // left -2
     text-box-edge: cap alphabetic;
     color: $classes-btn-label;
     background-color: transparent;
-    border: 1px solid $classes-btn-label;
+    border: 0.8px solid $classes-btn-label;
     border-radius: 0;
     opacity: 1;
     text-align: center;
     text-decoration: none;
     transition: background-color 0.2s ease;
+
+    @include md {
+      width: auto;
+      max-width: none;
+      min-height: 62px;
+      padding: 24px 32px;
+      border-width: 1px;
+    }
 
     &:hover {
       background-color: rgba($classes-btn-label, 0.04);

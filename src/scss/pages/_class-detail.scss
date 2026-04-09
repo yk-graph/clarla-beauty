@@ -24,13 +24,34 @@ $class-detail-column-gap: 60px;
     }
   }
 
+  // モバイル: Figma ヒーロー内 24px（container デフォルト 16px を上書き）
+  &__top &__container {
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      padding-left: $spacing-lg;
+      padding-right: $spacing-lg;
+    }
+  }
+
   &__container {
     @include container;
   }
 
+  &__title-wrap {
+    text-align: center;
+    margin-top: $spacing-sm;
+  }
+
+  &__title-underline {
+    @include page-hero-h1-rule;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      display: none;
+    }
+  }
+
   &__back {
     display: inline-block;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-md;
     font-family: $font-family-heading;
     font-size: 20px;
     font-weight: 400;
@@ -44,16 +65,20 @@ $class-detail-column-gap: 60px;
     color: $color-main;
     text-decoration: none;
 
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      margin-bottom: $spacing-lg;
+    }
+
     &:hover {
       text-decoration: underline;
     }
   }
 
   &__page-title {
-    margin: 0;
+    margin: 0 0 $spacing-md;
     text-align: center;
     font-family: $font-family-heading;
-    font-size: clamp(1.625rem, 4.5vw, 2.375rem);
+    font-size: clamp(1.625rem, 4.2vw, 2.25rem);
     font-weight: 400;
     font-style: normal;
     line-height: 1.2;
@@ -82,6 +107,12 @@ $class-detail-column-gap: 60px;
     @include md {
       padding: $class-detail-shell-padding-top 0 $spacing-4xl;
     }
+
+    // モバイル: ヒーロー直下のピンク帯をなくし、クリームのカード本文直下に接続
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      padding-top: 0;
+      border-top: none;
+    }
   }
 
   // ピンク内 2 カラムを Figma どおり最大 1024px で中央寄せ（left 208 ≒ 1440 上で中央）
@@ -90,6 +121,11 @@ $class-detail-column-gap: 60px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__layout {
@@ -99,6 +135,10 @@ $class-detail-column-gap: 60px;
     display: flex;
     flex-direction: column;
     gap: $spacing-xl;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      gap: $spacing-2xl;
+    }
 
     @include md {
       flex-direction: row;
@@ -119,8 +159,25 @@ $class-detail-column-gap: 60px;
   &__card {
     box-sizing: border-box;
     background-color: $class-detail-card-bg;
-    border: 1px solid $color-brand;
+    border: none;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+      border: 1px solid $color-brand;
+    }
+
+    // モバイル: ヒーロー直下で本文 → 写真 →（カード外）Overview が続く見え方
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      > .class-detail__card-body {
+        order: 1;
+      }
+
+      > .class-detail__card-media {
+        order: 2;
+      }
+    }
   }
 
   &__card-media {
@@ -128,6 +185,11 @@ $class-detail-column-gap: 60px;
     padding: 0;
     line-height: 0;
     background-color: rgba($color-black, 0.04);
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      margin-top: 0;
+      background-color: $class-detail-cream;
+    }
 
     img {
       width: 100%;
@@ -140,6 +202,23 @@ $class-detail-column-gap: 60px;
 
   &__card-body {
     padding: $spacing-lg;
+
+    // モバイル: Figma Frame 88 — padding 24 / 24 / 40 / 24、ブロック間 gap 40px
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      box-sizing: border-box;
+      width: 100%;
+      padding: $spacing-lg $spacing-lg $spacing-2xl $spacing-lg;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: $spacing-2xl;
+
+      > .class-detail__card-title,
+      > .class-detail__meta,
+      > .class-detail__join {
+        margin: 0;
+      }
+    }
   }
 
   &__card-title {
@@ -149,6 +228,10 @@ $class-detail-column-gap: 60px;
     font-weight: 400;
     line-height: 1.2;
     color: $color-main;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      display: none;
+    }
   }
 
   &__meta {
@@ -213,9 +296,48 @@ $class-detail-column-gap: 60px;
     }
   }
 
+  // モバイルのみ: Curriculum 下の Join Class（カード内ボタンに加えページ末尾）
+  &__join-wrap {
+    display: none;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: $spacing-2xl;
+    }
+  }
+
+  &__join--footer {
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      box-sizing: border-box;
+      width: 328px;
+      max-width: 100%;
+      min-width: 160px;
+      min-height: 62px;
+      height: auto;
+      gap: 10px;
+      padding: 24px 32px;
+      opacity: 1;
+      transform: rotate(0deg);
+      border-width: 0.8px;
+      border-style: solid;
+      border-color: $class-detail-btn;
+      background-color: transparent;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  }
+
   &__main {
     flex: 1;
     min-width: 0;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      box-sizing: border-box;
+      padding-left: $spacing-lg;
+      padding-right: $spacing-lg;
+    }
   }
 
   &__section-title {
@@ -296,10 +418,20 @@ $class-detail-column-gap: 60px;
     background-color: $class-detail-shell;
     container-type: inline-size;
     container-name: class-detail-card;
+
+    // モバイル: ピンクのカード地が本文〜写真のあいだに見えないよう全体をクリームに統一
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      background-color: $class-detail-cream;
+      gap: 0;
+    }
   }
 
   .class-detail__card-body {
     background-color: $class-detail-shell;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      background-color: $class-detail-cream; // #F8F6F4（写真上ブロックのみ）
+    }
   }
 
   .class-detail__main {
@@ -405,6 +537,20 @@ $class-detail-column-gap: 60px;
       max-width: 100%;
     }
   }
+
+  // モバイル: Overview が字詰め・nowrap で途切れやすいので読みやすさ優先（768px 以上は既存のまま）
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    .class-detail__overview--two-lines,
+    .class-detail__overview--three-lines {
+      font-size: 18px;
+    }
+
+    .class-detail__overview-line {
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+  }
 }
 
 // 1-on-1: カード見出しは uppercase・1行・「-on-」だけ小文字
@@ -460,5 +606,18 @@ $class-detail-column-gap: 60px;
     max-width: 22rem;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  // モバイル: カリキュラムの 2 行固定 li が極小・はみ出し — 768px 以上は cqi ベースのまま
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    .class-detail__list-item--fit {
+      font-size: 16px;
+    }
+
+    .class-detail__list-line {
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
   }
 }

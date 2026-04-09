@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/main.css" />
+    <script type="module" src="/js/main.js"></script>
   </head>
   <body>
     <!-- header -->
@@ -70,10 +71,11 @@
       <div class="class-detail__top">
         <div class="class-detail__container">
           <a href="/classes.html" class="class-detail__back">&lt; All classes</a>
-          <h1 class="class-detail__page-title">
-            Professional <span class="class-detail__title-num">1</span>-Day<br />
-            Makeup Workshop
-          </h1>
+          <div class="class-detail__title-wrap">
+            <h1 class="class-detail__page-title">
+              Professional <span class="class-detail__title-num">1</span>-Day Makeup Workshop
+            </h1>
+          </div>
         </div>
       </div>
       <div class="class-detail__shell">
@@ -85,8 +87,7 @@
               </figure>
               <div class="class-detail__card-body">
                 <h2 class="class-detail__card-title">
-                  Professional <span class="class-detail__title-num">1</span>-Day<br />
-                  Makeup Workshop
+                  Professional <span class="class-detail__title-num">1</span>-Day Makeup Workshop
                 </h2>
                 <ul class="class-detail__meta">
                   <li>
@@ -220,6 +221,9 @@
                 </ul>
               </div>
             </div>
+            <div class="class-detail__join-wrap">
+              <a class="class-detail__join class-detail__join--footer" href="/contact.html">Join Class</a>
+            </div>
           </div>
         </div>
       </div>
@@ -250,7 +254,5 @@
         <p class="footer__copyright">&copy; 2024 Clarla Beauty. All rights reserved.</p>
       </div>
     </footer>
-
-    <script src="/js/main.js"></script>
   </body>
 </html>
