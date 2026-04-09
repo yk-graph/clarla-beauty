@@ -87,3 +87,25 @@
     padding-top: $header-lg-height;
   }
 }
+
+@mixin btn-outline {
+  @include text($font-size-button-small, normal, var(--dark-grey));
+  padding: $spacing-md $spacing-xl;
+  border: 1px solid var(--dark-grey);
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border 0.3s;
+
+  &:hover {
+    background-color: var(--accent);
+    color: var(--snow-white);
+    border-color: var(--accent);
+  }
+
+  @include md {
+    padding: $spacing-lg $spacing-xl;
+  }
+}
