@@ -1,20 +1,104 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
+$overlay-delay: 1s;
+$overlay-fade-duration: 1.5s;
+
 .home {
-  // Hero section
+  @include header-padding;
+
   &__hero {
-    height: 100vh;
-    @include flex-center;
-    text-align: center;
+    position: relative;
+    height: calc(100dvh - $header-base-height);
+    width: 100%;
+    background: url('/images/top-fv.png') top center / cover no-repeat;
+    overflow: hidden;
+
+    @include xl {
+      height: calc(100dvh - $header-lg-height);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: #000;
+      z-index: 10;
+      animation: overlay-fadeout $overlay-fade-duration ease-out $overlay-delay forwards;
+    }
   }
 
-  &__hero-title {
-    margin-bottom: $spacing-md;
-  }
+  .hero {
+    &__body {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      width: calc(100% - $spacing-md * 2);
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  &__hero-subtitle {
-    font-size: $font-size-body;
-    color: var(--color-dark-grey);
+    &__signature {
+      max-width: 90%;
+      width: 600px;
+      height: auto;
+      margin-bottom: $spacing-xl;
+    }
+
+    &__description {
+      @include text($font-size-body-small, 300, #fff, $font-family-extra);
+      opacity: 0;
+      animation: content-fadein 0.75s ease-out calc($overlay-delay + 0.25s) forwards;
+      text-align: center;
+      max-width: 85%;
+      width: 600px;
+      margin-bottom: $spacing-xl;
+    }
+
+    &__btn {
+      @include text($font-size-button-small, normal, #fff);
+      padding: $spacing-md $spacing-xl;
+      border: 1px solid #fff;
+      background-color: transparent;
+      cursor: pointer;
+      opacity: 0;
+      animation: content-fadein 0.8s ease-out calc($overlay-delay + 0.5s) forwards;
+      transition:
+        background-color 0.3s,
+        color 0.3s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: var(--brand);
+      }
+
+      @include md {
+        padding: $spacing-lg $spacing-xl;
+      }
+    }
+  }
+}
+
+@keyframes overlay-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+}
+
+@keyframes content-fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

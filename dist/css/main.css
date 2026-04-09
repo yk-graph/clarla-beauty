@@ -54,6 +54,7 @@ img {
   left: 0;
   width: 100%;
   z-index: 10;
+  background: var(--snow-white);
   padding: 1rem 1.5rem;
   transition: transform 0.3s ease;
 }
@@ -422,21 +423,105 @@ img {
   letter-spacing: 0.02em;
 }
 
+.home {
+  padding-top: 112px;
+}
+@media (min-width: 1280px) {
+  .home {
+    padding-top: 184px;
+  }
+}
 .home__hero {
-  height: 100vh;
+  position: relative;
+  height: calc(100dvh - 112px);
+  width: 100%;
+  background: url("/images/top-fv.png") top center/cover no-repeat;
+  overflow: hidden;
+}
+@media (min-width: 1280px) {
+  .home__hero {
+    height: calc(100dvh - 184px);
+  }
+}
+.home__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  z-index: 10;
+  animation: overlay-fadeout 1.5s ease-out 1s forwards;
+}
+.home .hero__body {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: calc(100% - 2rem);
+  transform: translateX(-50%);
+  z-index: 20;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+}
+.home .hero__signature {
+  max-width: 90%;
+  width: 600px;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.home .hero__description {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  font-family: "Nunito", "Arial", sans-serif;
+  opacity: 0;
+  animation: content-fadein 0.75s ease-out 1.25s forwards;
   text-align: center;
+  max-width: 85%;
+  width: 600px;
+  margin-bottom: 2rem;
 }
-.home__hero-title {
-  margin-bottom: 1rem;
-}
-.home__hero-subtitle {
+.home .hero__btn {
   font-size: 1.125rem;
-  color: var(--color-dark-grey);
+  font-weight: normal;
+  color: #fff;
+  font-family: "Lora", "Georgia", serif;
+  padding: 1rem 2rem;
+  border: 1px solid #fff;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0;
+  animation: content-fadein 0.8s ease-out 1.5s forwards;
+  transition: background-color 0.3s, color 0.3s;
+}
+.home .hero__btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--brand);
+}
+@media (min-width: 768px) {
+  .home .hero__btn {
+    padding: 1.5rem 2rem;
+  }
 }
 
+@keyframes overlay-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+}
+@keyframes content-fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .my-work {
   padding-top: 112px;
 }
