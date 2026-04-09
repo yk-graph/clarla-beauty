@@ -5,12 +5,15 @@ $classes-shell-pink: $color-light-pink;
 $classes-page-cream: #f8f6f4;
 $classes-text-muted: $color-dark-grey;
 $classes-card-gap: 9rem;
+$classes-card-gap-mobile: 30px; // Breathing room between “View Class” and the next class photo on small screens
 $classes-hero-title-max: 5rem; // 80px
 // Figma class card image (Frame 430)
 $classes-media-width: 20.5rem; // 328px
 $classes-media-height: 31.25rem; // 500px
 $classes-btn-label: #5e4a49;
-// Figma Classes フレーム: width 1440 / height 2220 / top 448 / left -2 / opacity 1（top はキャンバス座標のため main 余白には使わない）
+// Gap between the class photo and the paragraph stack on phones
+$classes-mobile-gap-btn-photo: 48px;
+// The 1440×2220 Classes frame records top/left in canvas space — we don’t literally pipe that into main padding
 $classes-layout-max-w: 90rem; // 1440px
 $classes-layout-min-h-lg: 2220px;
 $classes-layout-nudge-x: -2px; // left -2
@@ -51,6 +54,14 @@ $classes-layout-nudge-x: -2px; // left -2
     padding-top: $spacing-lg;
     padding-bottom: 0;
 
+    // Let each class photo bleed to the screen edge, then lean on &__body for readable side padding
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      padding-left: 0;
+      padding-right: 0;
+      // Nuke the stray shell-tinted gutter that used to sit above the very first image
+      padding-top: 0;
+    }
+
     @include md {
       padding-top: $spacing-xl;
     }
@@ -84,7 +95,7 @@ $classes-layout-nudge-x: -2px; // left -2
     @include page-hero-h1-rule;
   }
 
-  // Figma: 437×54, Avenir Light 18px / 150% LH — 常に 2 行（行内は折り返さない／幅に応じて字詰め）
+  // Desktop keeps the hero line break tidy with nowrap spans; mobile swaps in a friendlier pair of lines.
   &__intro {
     box-sizing: border-box;
     width: 100%;
@@ -108,8 +119,35 @@ $classes-layout-nudge-x: -2px; // left -2
       font-size: clamp(11px, 3.2vw + 0.35rem, 18px);
     }
 
-    &-line {
+    @include md {
+      max-width: 33.4375rem; // ~535px so both hero lines can stay nowrap without feeling cramped
+    }
+  }
+
+  &__intro-stack {
+    &--mobile {
       display: block;
+
+      @include md {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include md {
+        display: block;
+      }
+    }
+  }
+
+  &__intro-line {
+    display: block;
+  }
+
+  &__intro-stack--desktop &__intro-line {
+    @include md {
       white-space: nowrap;
     }
   }
@@ -117,9 +155,13 @@ $classes-layout-nudge-x: -2px; // left -2
   &__list {
     display: flex;
     flex-direction: column;
-    gap: $classes-card-gap;
+    gap: $classes-card-gap-mobile;
     margin: 0;
     padding: 0;
+
+    @include md {
+      gap: $classes-card-gap;
+    }
   }
 
   &__card {
@@ -140,9 +182,9 @@ $classes-layout-nudge-x: -2px; // left -2
 
   &__media {
     width: 100%;
-    max-width: $classes-media-width;
+    max-width: none;
     flex-shrink: 0;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     line-height: 0;
     background-color: $classes-shell-pink;
@@ -152,7 +194,6 @@ $classes-layout-nudge-x: -2px; // left -2
     @include md {
       width: $classes-media-width;
       max-width: $classes-media-width;
-      margin: 0;
       align-self: flex-start;
     }
 
@@ -178,6 +219,10 @@ $classes-layout-nudge-x: -2px; // left -2
     padding: $spacing-lg $spacing-md $spacing-xl;
     text-align: left;
 
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      padding: $classes-mobile-gap-btn-photo $spacing-md $spacing-xl;
+    }
+
     @include md {
       padding: $spacing-xl $spacing-xl $spacing-xl $spacing-2xl;
       display: flex;
@@ -186,7 +231,7 @@ $classes-layout-nudge-x: -2px; // left -2
     }
   }
 
-  // Baskervville 36px / 400 / 120% LH / 0 tracking（長い見出しはカラム幅いっぱいで1行に近づける）
+  // Card titles: Baskervville 36/400; let long names breathe across the column instead of ellipsizing.
   &__name {
     box-sizing: border-box;
     display: block;
@@ -203,7 +248,7 @@ $classes-layout-nudge-x: -2px; // left -2
     opacity: 1;
   }
 
-  // 見出し内の「1」だけやや大きく — サイズは据え置き、ベースラインを周りの文字と揃える
+  // Pop the “1” a touch for drama, but keep it sitting on the same baseline as the siblings.
   &__name-num {
     font-family: inherit;
     font-size: 1.05em;
@@ -219,13 +264,19 @@ $classes-layout-nudge-x: -2px; // left -2
     margin: 0 0 $spacing-lg;
     padding: 0;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    row-gap: $spacing-sm;
     column-gap: clamp($spacing-md, 3vw, $spacing-xl);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+
+    @include md {
+      flex-wrap: nowrap;
+      row-gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
   }
 
   &__meta li {
@@ -310,11 +361,17 @@ $classes-layout-nudge-x: -2px; // left -2
     }
   }
 
-  // スクリーンショット：本文カラム左寄せ・ボタンは左下（中央揃えではない）
   &__actions {
     text-align: left;
     margin-top: $spacing-md;
     padding-top: $spacing-sm;
+
+    // Center the CTA on narrow layouts — feels more tap-friendly than hugging one side.
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      text-align: center;
+      padding-top: $spacing-xs;
+      margin-top: $spacing-sm;
+    }
   }
 
   &__btn {
@@ -323,10 +380,12 @@ $classes-layout-nudge-x: -2px; // left -2
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: auto;
+    // Mobile spec is roughly 328×53 with 20×32 padding and a hairline 0.8px border
+    width: 100%;
+    max-width: 328px;
     min-width: 160px;
-    min-height: 62px;
-    padding: 24px 32px;
+    min-height: 53px;
+    padding: 20px 32px;
     white-space: nowrap;
     font-family: $font-family-heading;
     font-size: 20px;
@@ -340,12 +399,20 @@ $classes-layout-nudge-x: -2px; // left -2
     text-box-edge: cap alphabetic;
     color: $classes-btn-label;
     background-color: transparent;
-    border: 1px solid $classes-btn-label;
+    border: 0.8px solid $classes-btn-label;
     border-radius: 0;
     opacity: 1;
     text-align: center;
     text-decoration: none;
     transition: background-color 0.2s ease;
+
+    @include md {
+      width: auto;
+      max-width: none;
+      min-height: 62px;
+      padding: 24px 32px;
+      border-width: 1px;
+    }
 
     &:hover {
       background-color: rgba($classes-btn-label, 0.04);

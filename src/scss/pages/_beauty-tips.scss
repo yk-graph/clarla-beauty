@@ -7,7 +7,7 @@ $bt-shell-bottom-md: 7.5rem;
 $bt-list-pad-top: 4.5rem;
 $bt-list-pad-top-md: 6rem;
 $bt-hero-title-max: 5rem; // 80px
-$bt-btn-hero-w: 13.125rem; // 210px — hero のみやや小さく
+$bt-btn-hero-w: 13.125rem; // 210px — Instagram hero CTA is a hair smaller than the grid “View More”
 $bt-btn-more-w: 10.0625rem; // 161px
 $bt-btn-label: #5e4a49;
 
@@ -31,6 +31,10 @@ $bt-btn-label: #5e4a49;
   &__container--main {
     padding-top: $bt-list-pad-top;
     padding-bottom: $bt-shell-bottom;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      padding-top: 40px;
+    }
 
     @include md {
       padding-top: $bt-list-pad-top-md;
@@ -87,20 +91,40 @@ $bt-btn-label: #5e4a49;
     background-color: $bt-shell-pink;
   }
 
-  // Figma: gap 32px; tabs Baskervville 24px / 400 / 130% LH — 常に一行（狭い幅は横スクロール）
+  // One horizontal row of hashtag filters; if it doesn’t fit, swipe. Wrapping turned into an ugly second line on phones.
   &__filters {
+    box-sizing: border-box;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 32px;
+    gap: $spacing-md $spacing-xl;
     width: 100%;
     max-width: 100%;
+    min-width: 0;
     min-height: 1.9375rem; // 31px
     margin: 0 auto $spacing-xl;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      width: 323px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      gap: 16px;
+      min-height: 14px;
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+
+    @include md {
+      justify-content: center;
+      gap: 32px;
+    }
   }
 
   &__filter {
@@ -132,6 +156,19 @@ $bt-btn-label: #5e4a49;
       font-weight: 400;
       border-bottom-color: $color-main;
     }
+
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      font-size: 14px;
+      line-height: 14px;
+      border-bottom: none;
+      margin-bottom: 0;
+      opacity: 1;
+      transform: rotate(0deg);
+
+      &.is-active {
+        border-bottom: none;
+      }
+    }
   }
 
   &__grid {
@@ -158,6 +195,13 @@ $bt-btn-label: #5e4a49;
 
     &.is-hidden {
       display: none;
+    }
+
+    // After filtering, small screens only show three tiles — the rest get this class until “View More” (see COLLAPSE_QUERY in main.js).
+    &.is-beyond-mobile-preview {
+      @media (max-width: #{$breakpoint-md - 1px}) {
+        display: none;
+      }
     }
   }
 
@@ -261,7 +305,7 @@ $bt-btn-label: #5e4a49;
       background-color: rgba($bt-btn-label, 0.04);
     }
 
-    // More on Instagram のみやや小さく（View More は据え置き）
+    // Tweak the hero Instagram button; leave the gallery’s View More as the big sibling.
     &--hero {
       width: $bt-btn-hero-w;
       min-height: 56px;

@@ -534,8 +534,10 @@
   }
 
   &__result-logo-image {
-    width: 72px;
+    width: 120px;
+    max-width: 100%;
     height: auto;
+    object-fit: contain;
   }
 
   &__result-logo {
@@ -585,9 +587,11 @@
 
   &__signature-logo {
     display: block;
-    width: min(140px, 42vw);
+    width: 120px;
+    max-width: 100%;
     height: auto;
     margin-inline: auto;
+    object-fit: contain;
   }
 
   &__signature-mark {
