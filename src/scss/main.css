@@ -53,7 +53,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   padding: 1rem 1.5rem;
   transition: transform 0.3s ease;
 }
