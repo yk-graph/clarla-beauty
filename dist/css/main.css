@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,400..700;1,400..700&display=swap");
 :root {
   --brand: #191919;
   --dark-brown: #725a58;
@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
   color: var(--color-brand);
   background-color: var(--snow-white);
 }
@@ -53,7 +53,6 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--snow-white);
   z-index: 10;
   padding: 1rem 1.5rem;
   transition: transform 0.3s ease;
@@ -138,14 +137,14 @@ img {
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--dark-brown);
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
 }
 @media (min-width: 1280px) {
   .header__nav-link {
     position: relative;
   }
   .header__nav-link::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -4px;
     left: 0;
@@ -167,7 +166,7 @@ img {
     content: none;
   }
   .header__nav-link:not(:last-child)::after {
-    content: '';
+    content: "";
     position: absolute;
     right: -2rem;
     top: 50%;
@@ -247,16 +246,14 @@ img {
   font-size: 1.125rem;
   font-weight: 400;
   color: var(--dark-grey);
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
   position: relative;
   opacity: 0;
   transform: translateX(-40px);
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .header__sidebar-link::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -318,47 +315,104 @@ img {
   }
 }
 .footer {
-  background-color: var(--color-brand);
-  color: var(--color-paper-white);
-  padding: 2.5rem 0 1.5rem;
-}
-.footer__container {
-  width: 100%;
+  width: calc(100% - 1rem * 2);
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
-}
-.footer__content {
-  display: grid;
-  gap: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 @media (min-width: 768px) {
-  .footer__content {
-    grid-template-columns: repeat(3, 1fr);
+  .footer {
+    padding-bottom: 2rem;
   }
 }
-.footer__section h3 {
-  font-size: 1.125rem;
-  margin-bottom: 1rem;
-}
-.footer__links {
+.footer__inner {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  gap: 0.5rem;
 }
-.footer__link {
+.footer__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.footer__logo {
+  height: 132px;
+  width: auto;
+}
+.footer__sentence {
   font-size: 0.875rem;
-  transition: color 0.3s;
+  font-weight: 300;
+  color: var(--brand);
+  font-family: "Nunito", "Arial", sans-serif;
+  letter-spacing: 0.02em;
 }
-.footer__link:hover {
-  color: var(--color-accent);
+.footer__sns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
-.footer__copyright {
+.footer__nav {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  padding: 1.5rem 0;
+  border-top: 0.5px solid var(--brand);
+  border-bottom: 0.5px solid var(--brand);
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 576px) {
+  .footer__nav {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .footer__nav {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .footer__nav {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+.footer__nav-link {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--dark-brown);
+  font-family: "Baskervville", "Georgia", serif;
+  position: relative;
   text-align: center;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(251, 250, 250, 0.2);
+  display: inline-block;
+  cursor: pointer;
+}
+.footer__nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--dark-brown);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.footer__nav-link:hover::before {
+  transform: scaleX(1);
+}
+.footer__copy {
   font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--dark-brown);
+  font-family: "Nunito", "Arial", sans-serif;
+  letter-spacing: 0.02em;
 }
 
 .home__hero {
@@ -434,7 +488,7 @@ img {
 }
 .my-work__title {
   margin: 0;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   line-height: 1.3;
@@ -453,7 +507,7 @@ img {
   opacity: 1;
 }
 .my-work__subtitle {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
@@ -500,7 +554,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   font-size: clamp(1.375rem, 2.5vw, 1.875rem);
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -512,9 +566,7 @@ img {
   padding: 0 0 10px;
   margin-bottom: -1px;
   border-bottom: 2px solid transparent;
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 .my-work__tab.is-active {
   font-weight: 500;
@@ -576,7 +628,7 @@ img {
   min-width: 160px;
   min-height: 62px;
   padding: 24px 32px;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -686,7 +738,7 @@ img {
 }
 .services__title {
   margin: 0;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   line-height: 1.3;
@@ -705,7 +757,7 @@ img {
   opacity: 1;
 }
 .services__intro {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
@@ -782,7 +834,7 @@ img {
   }
 }
 .services__name {
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 400;
   font-style: normal;
@@ -804,7 +856,7 @@ img {
   gap: 0.5rem;
 }
 .services__meta-text {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: #4a4a4a;
@@ -825,7 +877,7 @@ img {
   display: block;
 }
 .services__tagline {
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
@@ -836,7 +888,7 @@ img {
   margin: 0 0 1rem;
 }
 .services__text {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
   font-style: normal;
@@ -861,7 +913,7 @@ img {
   min-width: 160px;
   min-height: 62px;
   padding: 24px 32px;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -941,7 +993,7 @@ img {
   max-width: 26.0625rem;
   min-height: 4.875rem;
   margin: 0 auto;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   font-style: normal;
@@ -969,7 +1021,7 @@ img {
   min-height: 3.375rem;
   margin: 0 auto;
   padding: 0 1rem;
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
   line-height: 1.5;
@@ -1067,7 +1119,7 @@ img {
   width: 100%;
   max-width: none;
   margin: 0 0 1rem;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 36px;
   font-weight: 400;
   font-style: normal;
@@ -1106,7 +1158,7 @@ img {
   white-space: nowrap;
 }
 .classes__meta-text {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
   font-style: normal;
@@ -1134,7 +1186,7 @@ img {
   margin-bottom: 1.5rem;
 }
 .classes__section-title {
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
@@ -1145,7 +1197,7 @@ img {
   color: #725a58;
 }
 .classes__text {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
   font-style: normal;
@@ -1155,7 +1207,7 @@ img {
   margin: 0;
 }
 .classes__bullets {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding-left: 1.125rem;
   color: #535353;
@@ -1186,7 +1238,7 @@ img {
   min-height: 62px;
   padding: 24px 32px;
   white-space: nowrap;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -1238,7 +1290,7 @@ img {
 .class-detail__back {
   display: inline-block;
   margin-bottom: 1.5rem;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -1256,7 +1308,7 @@ img {
 .class-detail__page-title {
   margin: 0;
   text-align: center;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1.625rem, 4.5vw, 2.375rem);
   font-weight: 400;
   font-style: normal;
@@ -1340,7 +1392,7 @@ img {
 }
 .class-detail__card-title {
   margin: 0 0 1rem;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   font-weight: 400;
   line-height: 1.2;
@@ -1371,7 +1423,7 @@ img {
   display: block;
 }
 .class-detail__meta-text {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
@@ -1385,7 +1437,7 @@ img {
   width: 100%;
   min-height: 52px;
   padding: 18px 24px;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
@@ -1406,7 +1458,7 @@ img {
   min-width: 0;
 }
 .class-detail__section-title {
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 400;
   line-height: 1.3;
@@ -1414,7 +1466,7 @@ img {
   margin: 0 0 1rem;
 }
 .class-detail__overview {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
   font-style: normal;
@@ -1430,7 +1482,7 @@ img {
   margin-bottom: 0;
 }
 .class-detail__module-title {
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   font-style: normal;
@@ -1441,7 +1493,7 @@ img {
 .class-detail__list {
   margin: 0;
   padding-left: 1.25rem;
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.6;
@@ -1572,7 +1624,7 @@ img {
 .class-detail--one-to-one .class-detail__module-title,
 .class-detail--workshop .class-detail__module-title,
 .class-detail--beginner .class-detail__module-title {
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1.125rem, 2.2vw, 1.5rem);
   font-weight: 400;
   font-style: normal;
@@ -1696,7 +1748,7 @@ img {
   box-sizing: border-box;
   width: 100%;
   margin: 0;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   font-style: normal;
@@ -1721,7 +1773,7 @@ img {
   width: 100%;
   margin: 0 auto 2rem;
   padding: 0 1rem;
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
   font-style: normal;
@@ -1752,7 +1804,7 @@ img {
 }
 .beauty-tips__filter {
   flex-shrink: 0;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
@@ -1766,9 +1818,7 @@ img {
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 .beauty-tips__filter:hover {
   color: #191919;
@@ -1813,9 +1863,7 @@ img {
   overflow: hidden;
   background-color: rgba(25, 25, 25, 0.06);
   box-shadow: 0 4px 20px rgba(25, 25, 25, 0.06);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .beauty-tips__card-link:hover {
   transform: translateY(-2px);
@@ -1850,7 +1898,7 @@ img {
   box-shadow: 0 2px 8px rgba(25, 25, 25, 0.12);
 }
 .beauty-tips__play::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 52%;
@@ -1876,7 +1924,7 @@ img {
   min-width: 160px;
   min-height: 62px;
   padding: 24px 32px;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -1937,7 +1985,7 @@ img {
 }
 .about__eyebrow {
   margin: 0 0 0.5rem;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 400;
   font-style: normal;
@@ -1948,7 +1996,7 @@ img {
 }
 .about__title {
   margin: 0;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   font-style: normal;
@@ -2013,7 +2061,7 @@ img {
 }
 .about__headline {
   margin: 0 0 1.5rem;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 400;
   font-style: normal;
@@ -2031,7 +2079,7 @@ img {
   margin: 0;
   width: 100%;
   max-width: 100%;
-  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
   line-height: 150%;
@@ -2068,7 +2116,7 @@ img {
   min-width: 160px;
   min-height: 62px;
   padding: 24px 32px;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -2110,7 +2158,7 @@ img {
 }
 .about__brands-title {
   margin: 0;
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 400;
   font-style: normal;
@@ -2150,9 +2198,7 @@ img {
   object-fit: contain;
   filter: grayscale(1);
   opacity: 0.72;
-  transition:
-    opacity 0.2s ease,
-    filter 0.2s ease;
+  transition: opacity 0.2s ease, filter 0.2s ease;
 }
 .about__brand:hover img {
   filter: grayscale(0.4);
@@ -2174,7 +2220,7 @@ img {
   margin-bottom: 2.5rem;
 }
 .contact__title {
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-weight: 400;
   font-size: clamp(2.75rem, 7vw, 5rem);
   letter-spacing: 0.2em;
@@ -2193,7 +2239,7 @@ img {
   font-size: clamp(1rem, 1.4vw, 1.125rem);
   font-weight: 300;
   color: #191919;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   line-height: 1.6;
 }
 .contact__quick-links {
@@ -2205,7 +2251,7 @@ img {
   font-size: clamp(1rem, 1.4vw, 1.125rem);
   font-weight: normal;
   color: #725a58;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   list-style: none;
 }
 .contact__quick-links li {
@@ -2245,7 +2291,7 @@ img {
   font-size: clamp(1.125rem, 2vw, 1.75rem);
   font-weight: normal;
   color: #191919;
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
   color: #888888;
   padding: 0 0 0.5rem;
   border-bottom: 1px solid transparent;
@@ -2279,7 +2325,7 @@ img {
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.8);
-  font-family: 'Avenir';
+  font-family: "Avenir";
   cursor: pointer;
 }
 .contact__group {
@@ -2291,7 +2337,7 @@ img {
   font-size: clamp(1.25rem, 2.1vw, 2rem);
   font-weight: normal;
   color: black;
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
 }
 .contact__chips {
   display: grid;
@@ -2312,7 +2358,7 @@ img {
   font-size: clamp(0.8125rem, 1.1vw, 0.875rem);
   font-weight: normal;
   color: black;
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
   cursor: pointer;
 }
 .contact__chip input {
@@ -2349,7 +2395,7 @@ img {
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
   font-weight: normal;
   color: black;
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
 }
 .contact__premium-grid {
   display: grid;
@@ -2365,14 +2411,14 @@ img {
   border: 1px solid rgba(114, 90, 88, 0.15);
   background-color: rgba(251, 250, 250, 0.7);
 }
-.contact__guest-list .contact__check input[type='checkbox'] {
+.contact__guest-list .contact__check input[type=checkbox] {
   border-color: #e3b6b1;
 }
-.contact__guest-list .contact__check input[type='checkbox']:checked {
+.contact__guest-list .contact__check input[type=checkbox]:checked {
   background-color: #e3b6b1;
   border-color: #e3b6b1;
 }
-.contact__guest-list .contact__check input[type='checkbox']:focus-visible {
+.contact__guest-list .contact__check input[type=checkbox]:focus-visible {
   outline: 2px solid rgba(227, 182, 177, 0.35);
 }
 .contact__guest-row {
@@ -2385,7 +2431,7 @@ img {
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
   font-weight: normal;
   color: black;
-  font-family: 'Avenir';
+  font-family: "Avenir";
 }
 @media (min-width: 576px) {
   .contact__guest-row {
@@ -2396,7 +2442,7 @@ img {
   font-size: clamp(0.9375rem, 1.2vw, 1rem);
   font-weight: normal;
   color: black;
-  font-family: 'Avenir';
+  font-family: "Avenir";
 }
 .contact__guest-row:last-child {
   border-bottom: none;
@@ -2426,7 +2472,7 @@ img {
   font-size: clamp(1.125rem, 1.8vw, 1.375rem);
   font-weight: 300;
   color: #535353;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   line-height: 1;
   cursor: pointer;
 }
@@ -2438,7 +2484,7 @@ img {
   font-size: clamp(1rem, 1.6vw, 1.25rem);
   font-weight: 300;
   color: #191919;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   line-height: 1;
   min-width: 16px;
   text-align: center;
@@ -2452,7 +2498,7 @@ img {
   font-size: clamp(1.25rem, 2.1vw, 2rem);
   font-weight: normal;
   color: black;
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
 }
 .contact__field input,
 .contact__field select,
@@ -2463,7 +2509,7 @@ img {
   font-size: clamp(0.8125rem, 1.1vw, 0.875rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.85);
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
 }
 .contact__field textarea {
   min-height: 110px;
@@ -2474,7 +2520,7 @@ img {
   font-size: clamp(0.75rem, 1vw, 0.8125rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.75);
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
 }
 .contact__check {
   display: flex;
@@ -2483,7 +2529,7 @@ img {
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
   font-weight: normal;
   color: black;
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
 }
 .contact__choices {
   display: flex;
@@ -2502,12 +2548,9 @@ img {
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
   font-weight: normal;
   color: black;
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
 }
-.contact__check input[type='checkbox'],
-.contact__check input[type='radio'],
-.contact__choice input[type='checkbox'],
-.contact__choice input[type='radio'] {
+.contact__check input[type=checkbox], .contact__check input[type=radio], .contact__choice input[type=checkbox], .contact__choice input[type=radio] {
   -webkit-appearance: none;
   appearance: none;
   inline-size: 18px;
@@ -2525,44 +2568,35 @@ img {
   flex-shrink: 0;
   box-sizing: border-box;
 }
-.contact__check input[type='checkbox'],
-.contact__choice input[type='checkbox'] {
+.contact__check input[type=checkbox], .contact__choice input[type=checkbox] {
   border-radius: 0;
 }
-.contact__check input[type='radio'],
-.contact__choice input[type='radio'] {
+.contact__check input[type=radio], .contact__choice input[type=radio] {
   border-radius: 50%;
   border: 3px solid #fbfafa;
   box-shadow: 0 0 0 1px rgba(185, 150, 146, 0.7);
 }
-.contact__check input[type='checkbox']:checked,
-.contact__choice input[type='checkbox']:checked {
+.contact__check input[type=checkbox]:checked, .contact__choice input[type=checkbox]:checked {
   background-color: #b99692;
   border-color: #b99692;
 }
-.contact__check input[type='checkbox']:checked::after,
-.contact__choice input[type='checkbox']:checked::after {
-  content: '';
+.contact__check input[type=checkbox]:checked::after, .contact__choice input[type=checkbox]:checked::after {
+  content: "";
   width: 4px;
   height: 8px;
   border: solid #fbfafa;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg) translate(-1px, -1px);
 }
-.contact__check input[type='radio']:checked::after,
-.contact__choice input[type='radio']:checked::after {
+.contact__check input[type=radio]:checked::after, .contact__choice input[type=radio]:checked::after {
   content: none;
 }
-.contact__check input[type='radio']:checked,
-.contact__choice input[type='radio']:checked {
+.contact__check input[type=radio]:checked, .contact__choice input[type=radio]:checked {
   background-color: rgba(185, 150, 146, 0.75);
   border-color: #fbfafa;
   box-shadow: 0 0 0 1px rgba(185, 150, 146, 0.7);
 }
-.contact__check input[type='checkbox']:focus-visible,
-.contact__check input[type='radio']:focus-visible,
-.contact__choice input[type='checkbox']:focus-visible,
-.contact__choice input[type='radio']:focus-visible {
+.contact__check input[type=checkbox]:focus-visible, .contact__check input[type=radio]:focus-visible, .contact__choice input[type=checkbox]:focus-visible, .contact__choice input[type=radio]:focus-visible {
   outline: 2px solid rgba(185, 150, 146, 0.35);
   outline-offset: 2px;
 }
@@ -2574,7 +2608,7 @@ img {
   font-size: clamp(0.8125rem, 1.1vw, 0.875rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.85);
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
 }
 .contact input:focus,
 .contact select:focus,
@@ -2590,9 +2624,7 @@ img {
   color: rgba(114, 90, 88, 0.8);
   padding: 0.5rem 1.5rem;
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
-  transition:
-    background-color 0.25s,
-    color 0.25s;
+  transition: background-color 0.25s, color 0.25s;
 }
 .contact__submit:hover {
   background-color: rgba(114, 90, 88, 0.08);
@@ -2614,14 +2646,14 @@ img {
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.9);
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
   line-height: 1.2;
 }
 .contact__result-subtitle {
   font-size: clamp(0.75rem, 1vw, 0.875rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.9);
-  font-family: 'Avenir';
+  font-family: "Avenir";
 }
 .contact__result-edit {
   align-self: flex-start;
@@ -2631,7 +2663,7 @@ img {
   font-size: clamp(0.875rem, 1vw, 1rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.85);
-  font-family: 'Avenir';
+  font-family: "Avenir";
   cursor: pointer;
 }
 .contact__result-card {
@@ -2651,13 +2683,13 @@ img {
   font-size: clamp(0.75rem, 1vw, 0.8125rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.85);
-  font-family: 'Avenir';
+  font-family: "Avenir";
 }
 .contact__result-price {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.95);
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
 }
 .contact__result-columns {
   display: grid;
@@ -2672,7 +2704,7 @@ img {
   font-size: clamp(1rem, 1.6vw, 1.25rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.95);
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
   margin-bottom: 0.25rem;
 }
 .contact__result-columns ul {
@@ -2680,7 +2712,7 @@ img {
   font-size: clamp(0.75rem, 1vw, 0.8125rem);
   font-weight: normal;
   color: black;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -2700,14 +2732,14 @@ img {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.95);
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
   line-height: 1;
 }
 .contact__result-brand {
   font-size: clamp(0.75rem, 1vw, 0.8125rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.9);
-  font-family: 'Avenir';
+  font-family: "Avenir";
 }
 .contact__result-share {
   min-width: 90px;
@@ -2721,7 +2753,7 @@ img {
   font-size: clamp(1.5rem, 2.4vw, 2rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.95);
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
 }
 .contact__class-result-links {
   list-style: none;
@@ -2731,7 +2763,7 @@ img {
   font-size: clamp(0.875rem, 1vw, 1rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.9);
-  font-family: 'Avenir';
+  font-family: "Avenir";
 }
 .contact__class-result-links li {
   display: inline-flex;
@@ -2752,19 +2784,19 @@ img {
   margin-inline: auto;
 }
 .contact__signature-mark {
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(2.25rem, 5vw, 3.5rem);
   line-height: 1;
 }
 .contact__signature-name {
-  font-family: 'Baskervville', 'Georgia', serif;
+  font-family: "Baskervville", "Georgia", serif;
   font-size: clamp(1rem, 1.5vw, 1.125rem);
 }
 .contact__signature-note {
   font-size: clamp(0.75rem, 1vw, 0.8125rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.9);
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
   margin-top: 0.25rem;
 }
 .contact__signature-links {
@@ -2776,14 +2808,13 @@ img {
   font-size: clamp(0.75rem, 1vw, 0.8125rem);
   font-weight: normal;
   color: rgba(114, 90, 88, 0.9);
-  font-family: 'Lora', 'Georgia', serif;
+  font-family: "Lora", "Georgia", serif;
   text-transform: lowercase;
 }
 .contact {
   padding: 5.25rem 0 40px;
 }
-.contact__intro,
-.contact__signature {
+.contact__intro, .contact__signature {
   display: none;
 }
 .contact__container {
@@ -2811,9 +2842,8 @@ img {
 .contact__tab--active {
   color: #2f2727;
 }
-.contact__group-title,
-.contact__field > label:not(.contact__check) {
-  font-family: 'Baskervville', serif;
+.contact__group-title, .contact__field > label:not(.contact__check) {
+  font-family: "Baskervville", serif;
   font-size: 24px;
   line-height: 1.1;
   color: #2f2727;
@@ -2822,38 +2852,33 @@ img {
 .contact__hint {
   display: none;
 }
-.contact__panel[data-panel='classes'] .contact__chips {
+.contact__panel[data-panel=classes] .contact__chips {
   grid-template-columns: 1fr;
   gap: 8px;
 }
-.contact__panel[data-panel='classes'] .contact__chip {
+.contact__panel[data-panel=classes] .contact__chip {
   min-height: 42px;
   background: #f3f3f3;
   border: 1px solid #e5d9d9;
   padding: 10px 12px;
 }
-.contact__panel[data-panel='classes'] .contact__chip-label {
+.contact__panel[data-panel=classes] .contact__chip-label {
   font-size: 14px;
 }
-.contact__panel[data-panel='services'] .contact__chips,
-.contact__panel[data-panel='services'] .contact__chips--two {
+.contact__panel[data-panel=services] .contact__chips, .contact__panel[data-panel=services] .contact__chips--two {
   grid-template-columns: 1fr;
   gap: 8px;
 }
-.contact__panel[data-panel='services'] .contact__chip {
+.contact__panel[data-panel=services] .contact__chip {
   min-height: 42px;
   background: #f3f3f3;
   border: 1px solid #e5d9d9;
   padding: 10px 12px;
 }
-.contact__panel[data-panel='services'] .contact__chip-label {
+.contact__panel[data-panel=services] .contact__chip-label {
   font-size: 14px;
 }
-.contact__field input,
-.contact__field select,
-.contact__field textarea,
-.contact__group > input[type='tel'],
-.contact__phone-row input {
+.contact__field input, .contact__field select, .contact__field textarea, .contact__group > input[type=tel], .contact__phone-row input {
   width: 100%;
   border: 1px solid #cfbcbc;
   border-radius: 0;
@@ -2879,7 +2904,7 @@ img {
 }
 .contact__choice {
   font-size: 16px;
-  font-family: 'Baskervville', serif;
+  font-family: "Baskervville", serif;
   color: #2f2727;
 }
 .contact__phone-row {
@@ -2908,37 +2933,37 @@ img {
   background: transparent;
   color: #7a6666;
   font-size: 24px;
-  font-family: 'Baskervville', serif;
+  font-family: "Baskervville", serif;
 }
 .contact__back {
   font-size: 12px;
   font-weight: normal;
   color: #8f7f7f;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   margin-bottom: 2px;
 }
-.contact__panel[data-panel='services'] .contact__group-title {
+.contact__panel[data-panel=services] .contact__group-title {
   font-size: 24px;
 }
-.contact__panel[data-panel='services'] .contact__premium-grid {
+.contact__panel[data-panel=services] .contact__premium-grid {
   grid-template-columns: 1fr;
   gap: 8px;
 }
-.contact__panel[data-panel='services'] .contact__premium-grid .contact__check {
+.contact__panel[data-panel=services] .contact__premium-grid .contact__check {
   margin-top: 0;
   font-size: 12px;
   font-weight: normal;
   color: #4f4141;
-  font-family: 'Avenir';
+  font-family: "Avenir";
 }
-.contact__panel[data-panel='services'] .contact__guest-list {
+.contact__panel[data-panel=services] .contact__guest-list {
   border: 0;
   background: transparent;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.contact__panel[data-panel='services'] .contact__guest-row {
+.contact__panel[data-panel=services] .contact__guest-row {
   border: 1px solid #e7d8d8;
   padding: 8px 10px;
   background: #f4ecec;
@@ -2946,105 +2971,104 @@ img {
   gap: 8px;
   align-items: start;
 }
-.contact__panel[data-panel='services'] .contact__guest-row:last-child {
+.contact__panel[data-panel=services] .contact__guest-row:last-child {
   border-bottom: 1px solid #e7d8d8;
 }
-.contact__panel[data-panel='services'] .contact__guest-row > span:first-child {
+.contact__panel[data-panel=services] .contact__guest-row > span:first-child {
   font-size: 16px;
   line-height: 1.1;
 }
-.contact__panel[data-panel='services'] .contact__guest-counter {
+.contact__panel[data-panel=services] .contact__guest-counter {
   grid-template-columns: 26px 26px 26px;
   height: 26px;
   background: #eedfdf;
 }
-.contact__panel[data-panel='services'] .contact__guest-counter-button,
-.contact__panel[data-panel='services'] .contact__guest-counter-value {
+.contact__panel[data-panel=services] .contact__guest-counter-button, .contact__panel[data-panel=services] .contact__guest-counter-value {
   font-size: 12px;
 }
-.contact__panel[data-panel='services'] .contact__guest-counter-divider {
+.contact__panel[data-panel=services] .contact__guest-counter-divider {
   display: none;
 }
-.contact__panel[data-panel='services'] .contact__guest-row .contact__check {
+.contact__panel[data-panel=services] .contact__guest-row .contact__check {
   margin-top: 0;
   grid-column: 1/-1;
   font-size: 13px;
 }
-.contact__panel[data-panel='services'] .contact__result {
+.contact__panel[data-panel=services] .contact__result {
   gap: 10px;
 }
-.contact__panel[data-panel='services'] .contact__result-title {
+.contact__panel[data-panel=services] .contact__result-title {
   font-size: 24px;
   font-weight: normal;
   color: #4d3e3e;
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
   line-height: 1.5;
 }
-.contact__panel[data-panel='services'] .contact__result-subtitle {
+.contact__panel[data-panel=services] .contact__result-subtitle {
   font-size: 14px;
   font-weight: normal;
   color: #4d3e3e;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   line-height: 1.45;
 }
-.contact__panel[data-panel='services'] .contact__result-edit {
+.contact__panel[data-panel=services] .contact__result-edit {
   font-size: 18px;
   font-weight: normal;
   color: #716161;
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
   line-height: 1;
 }
-.contact__panel[data-panel='services'] .contact__result-card {
+.contact__panel[data-panel=services] .contact__result-card {
   border: 1px solid #cfbdbd;
   background: transparent;
   padding: 10px;
   gap: 10px;
   margin-top: 20px;
 }
-.contact__panel[data-panel='services'] .contact__result-image {
+.contact__panel[data-panel=services] .contact__result-image {
   height: 138px;
 }
-.contact__panel[data-panel='services'] .contact__result-note {
+.contact__panel[data-panel=services] .contact__result-note {
   font-size: 16px;
   font-weight: normal;
   color: #5c4f4f;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   margin-top: 20px;
 }
-.contact__panel[data-panel='services'] .contact__result-price {
+.contact__panel[data-panel=services] .contact__result-price {
   font-size: 36px;
   font-weight: normal;
   color: #5a4a4a;
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
   line-height: 1.3;
   margin-top: -2px;
 }
-.contact__panel[data-panel='services'] .contact__result-columns {
+.contact__panel[data-panel=services] .contact__result-columns {
   grid-template-columns: 1fr;
   gap: 32px;
 }
-.contact__panel[data-panel='services'] .contact__result-columns h3 {
+.contact__panel[data-panel=services] .contact__result-columns h3 {
   font-size: 28px;
   font-weight: normal;
   color: #3d3030;
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
   margin-bottom: 2px;
 }
-.contact__panel[data-panel='services'] .contact__result-columns ul {
+.contact__panel[data-panel=services] .contact__result-columns ul {
   font-size: 16px;
   font-weight: normal;
   color: #3d3030;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   gap: 4px;
 }
-.contact__panel[data-panel='services'] .contact__result-footer {
+.contact__panel[data-panel=services] .contact__result-footer {
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   margin-top: 2px;
   gap: 10px;
 }
-.contact__panel[data-panel='services'] .contact__result-share {
+.contact__panel[data-panel=services] .contact__result-share {
   min-width: 0;
   width: 100%;
 }
@@ -3054,7 +3078,7 @@ img {
   align-items: center;
   gap: 8px;
 }
-.contact__panel[data-panel='services'] .contact__result-logo-image {
+.contact__panel[data-panel=services] .contact__result-logo-image {
   width: 54px;
 }
 .contact__result-socials {
@@ -3086,14 +3110,13 @@ img {
   .contact__tab {
     font-size: 40px;
   }
-  .contact__group-title,
-  .contact__field > label:not(.contact__check) {
+  .contact__group-title, .contact__field > label:not(.contact__check) {
     font-size: 24px;
   }
-  .contact__panel[data-panel='services'] .contact__result-title {
+  .contact__panel[data-panel=services] .contact__result-title {
     font-size: 32px;
   }
-  .contact__panel[data-panel='services'] .contact__result-columns {
+  .contact__panel[data-panel=services] .contact__result-columns {
     grid-template-columns: 1fr 1fr;
   }
   .contact__field textarea {
