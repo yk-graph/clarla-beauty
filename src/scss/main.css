@@ -2553,9 +2553,6 @@ img {
   opacity: 0.95;
 }
 
-.contact {
-  padding: 2rem 0 4rem;
-}
 .contact__container {
   width: 100%;
   max-width: 1280px;
@@ -3169,14 +3166,19 @@ img {
   text-transform: lowercase;
 }
 .contact {
-  padding: 5.25rem 0 40px;
+  padding-top: 112px;
 }
-.contact__intro, .contact__signature {
-  display: none;
+@media (min-width: 1280px) {
+  .contact {
+    padding-top: 184px;
+  }
+}
+.contact {
+  padding-bottom: 0;
 }
 .contact__container {
   max-width: 390px;
-  padding: 0 10px;
+  padding: 2.5rem 10px 0;
 }
 .contact__form {
   max-width: 100%;
@@ -3452,11 +3454,19 @@ img {
 }
 @media (min-width: 768px) {
   .contact {
-    padding: 5.5rem 0 60px;
+    padding-top: 112px;
+    padding-bottom: 0;
   }
+}
+@media (min-width: 768px) and (min-width: 1280px) {
+  .contact {
+    padding-top: 184px;
+  }
+}
+@media (min-width: 768px) {
   .contact__container {
     max-width: 720px;
-    padding: 0 20px;
+    padding: 2.5rem 20px 0;
   }
   .contact__form {
     padding: 22px 20px 28px;
