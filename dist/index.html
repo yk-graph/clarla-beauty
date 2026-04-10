@@ -27,7 +27,7 @@
         </div>
 
         <!-- logo -->
-        <img src="/images/logo-black.svg" alt="Clarla Beauty Logo" class="header__logo" />
+        <img src="/images/logo-with-text-black.svg" alt="Clarla Beauty Logo" class="header__logo" />
 
         <!-- lattop navigation -->
         <nav class="header__nav">
@@ -61,12 +61,179 @@
       </aside>
     </header>
 
+    <!-- main content -->
     <main class="home">
-      <section class="home__hero">
-        <div class="container">
-          <h1 class="home__hero-title">Clarla Beauty</h1>
-          <p class="home__hero-subtitle">Professional Beauty Services</p>
+      <!-- hero section -->
+      <section class="home-hero">
+        <div class="home-hero__body">
+          <object
+            type="image/svg+xml"
+            data="/images/title-signature.svg"
+            class="home-hero__signature"
+            aria-label="Carla Beauty"
+          ></object>
+          <p class="home-hero__description">Vancouver's go-to makeup and hairstyle, with a Brazilian twist</p>
+          <button class="home-hero__btn">Free Consultation</button>
         </div>
+      </section>
+
+      <!-- about section -->
+      <section class="home-about">
+        <div class="home-about__body">
+          <span class="home-about__logo" role="img" aria-label="Clarla Beauty"></span>
+          <h2 class="home-about__title">Professional Makeup & Hairstyle Artist</h2>
+          <p class="home-about__description">10+ years creating stunning looks for weddings and special occasions.</p>
+          <div class="home-about__cta">
+            <img src="/images/signature.svg" alt="Carla Beatriz" class="home-about__signature" />
+            <button class="home-about__btn">About Me</button>
+          </div>
+        </div>
+        <img src="/images/stylist.png" alt="stylist" class="home-about__image" />
+      </section>
+
+      <!-- our brands -->
+      <section class="home-brands">
+        <h2 class="home-brands__title">Our Brands</h2>
+        <div class="home-brands__list">
+          <img src="/images/Logo（1）.png" alt="Brand 1" class="home-brands__item" />
+          <img src="/images/Logo（2）.png" alt="Brand 2" class="home-brands__item" />
+          <img src="/images/Logo（3）.png" alt="Brand 3" class="home-brands__item" />
+          <img src="/images/Logo（4）.png" alt="Brand 4" class="home-brands__item" />
+          <img src="/images/Logo（5）.png" alt="Brand 5" class="home-brands__item" />
+          <img src="/images/Logo（6）.png" alt="Brand 6" class="home-brands__item" />
+          <img src="/images/Logo（7）.png" alt="Brand 7" class="home-brands__item" />
+          <img src="/images/Logo（8）.png" alt="Brand 8" class="home-brands__item" />
+        </div>
+      </section>
+
+      <!-- customer section -->
+      <section class="home-customer">
+        <h2 class="home-customer__title">You are a star</h2>
+        <p class="home-customer__description"
+          >Shine effortlessly, embrace your unique features with absolute confidence.</p
+        >
+        <button class="home-customer__btn">My Work</button>
+        <ul class="home-customer__list">
+          <li class="home-customer__item">
+            <img src="/images/customer_01.png" alt="Customer 1" class="home-customer__image" />
+          </li>
+          <li class="home-customer__item">
+            <img src="/images/customer_02.png" alt="Customer 2" class="home-customer__image" />
+          </li>
+          <li class="home-customer__item">
+            <img src="/images/customer_03.png" alt="Customer 3" class="home-customer__image" />
+          </li>
+          <li class="home-customer__item">
+            <img src="/images/customer_04.png" alt="Customer 4" class="home-customer__image" />
+          </li>
+        </ul>
+        <div class="home-customer__body">
+          <p class="home-customer__comment">
+            Carla is the best! She made me the night's brightest star! She stayed with me the whole wedding ensuring I
+            always looked and felt wonderful!!
+          </p>
+        </div>
+        <div class="home-customer__switch-btn">
+          <img src="" alt="" class="home-customer__btn--left" />
+          <img src="" alt="" class="home-customer__current" />
+          <img src="" alt="" class="home-customer__btn--right" />
+        </div>
+      </section>
+
+      <!-- services section -->
+      <section class="home-services">
+        <h2 class="home-services__title">Makeup & hairstyle</h2>
+        <p class="home-services__description">We offer fully customizable plan to meet your unique requirements.</p>
+        <button class="home-services__btn">Get a Quote</button>
+        <ul class="home-services__list">
+          <li class="home-services__item">
+            <img
+              src="/images/services-party-sp.png"
+              alt="Party"
+              class="home-services__image home-services__image--sp"
+            />
+            <img
+              src="/images/services-party-pc.png"
+              alt="Party"
+              class="home-services__image home-services__image--pc"
+            />
+          </li>
+          <li class="home-services__item">
+            <img
+              src="/images/services-wedding-sp.png"
+              alt="Wedding"
+              class="home-services__image home-services__image--sp"
+            />
+            <img
+              src="/images/services-wedding-pc.png"
+              alt="Wedding"
+              class="home-services__image home-services__image--pc"
+            />
+          </li>
+          <li class="home-services__item">
+            <img
+              src="/images/services-photoshoot-sp.png"
+              alt="Photoshoot"
+              class="home-services__image home-services__image--sp"
+            />
+            <img
+              src="/images/services-photoshoot-pc.png"
+              alt="Photoshoot"
+              class="home-services__image home-services__image--pc"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <!-- makeup section -->
+      <section class="home-makeup">
+        <div class="home-makeup__inner">
+          <h2 class="home-makeup__title">MAKE UP 101</h2>
+          <p class="home-makeup__description">Learn the art of makeup and hairstyling with our expert-led classes.</p>
+          <button class="home-makeup__btn">View Classes</button>
+          <div class="home-makeup__contents">
+            <div class="home-makeup__body">
+              <ul class="home-makeup__list">
+                <li class="home-makeup__item">
+                  <img src="/images/class-makeup.png" alt="Class 1" class="home-makeup__image" />
+                </li>
+                <li class="home-makeup__item">
+                  <img src="/images/class-hairstyle.png" alt="Class 2" class="home-makeup__image" />
+                </li>
+                <li class="home-makeup__item">
+                  <img src="/images/class-both.png" alt="Class 3" class="home-makeup__image" />
+                </li>
+              </ul>
+              <button class="home-makeup__btn">All Classes</button>
+            </div>
+            <img src="/images/makeup-image.png" alt="" class="home-makeup__image" />
+          </div>
+        </div>
+      </section>
+
+      <!-- beauty tips section -->
+      <section class="home-tips">
+        <h2 class="home-tips__title">DIY Beauty Corner</h2>
+        <ul class="home-tips__list">
+          <li class="home-tips__item">
+            <img src="/images/tips-makeup.png" alt="Tip 1" class="home-tips__image" />
+          </li>
+          <li class="home-tips__item">
+            <img src="/images/tips-hairstyle.png" alt="Tip 2" class="home-tips__image" />
+          </li>
+          <li class="home-tips__item">
+            <img src="/images/tips-both.png" alt="Tip 3" class="home-tips__image" />
+          </li>
+        </ul>
+        <button class="home-tips__btn">More Beauty Tips</button>
+      </section>
+
+      <!-- talk section -->
+      <section class="home-talk">
+        <h2 class="home-talk__title">LET'S TALK</h2>
+        <p class="home-talk__description">
+          Check availability, pricing, and schedule a meeting for your special day or our academy services.
+        </p>
       </section>
     </main>
 
@@ -76,7 +243,7 @@
         <!-- footer-top -->
         <div class="footer__top">
           <!-- logo -->
-          <img src="/images/logo-black.svg" alt="Clarla Beauty Logo" class="footer__logo" />
+          <img src="/images/logo-with-text-black.svg" alt="Clarla Beauty Logo" class="footer__logo" />
           <p class="footer__sentence">Expert makeup and hairstyle studio</p>
           <!-- sns -->
           <div class="footer__sns">

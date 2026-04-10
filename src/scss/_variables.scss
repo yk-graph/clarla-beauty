@@ -12,9 +12,16 @@ $color-dark-pink: #b99692;
 $color-brown: #a06d67;
 
 // Typography - Font Family
-$font-family-base: 'Lora', 'Georgia', serif;
-$font-family-heading: 'Baskervville', 'Georgia', serif;
-$font-family-extra: 'Nunito', 'Arial', sans-serif;
+$font-family-base: 'Lora', 'Georgia', serif; // Variable: 400-700
+$font-family-heading: 'Cormorant Garamond', 'Georgia', serif; // Variable: 300-700
+$font-family-extra: 'Nunito', 'Arial', sans-serif; // Variable: 200-1000
+
+// Typography - Font Weight
+$font-weight-light: 300; // Cormorant Garamond, Nunito
+$font-weight-normal: 400; // All fonts
+$font-weight-medium: 500; // All fonts
+$font-weight-semibold: 600; // All fonts
+$font-weight-bold: 700; // All fonts
 
 // Typography - Headings
 $font-size-h1: 5rem; // 80px

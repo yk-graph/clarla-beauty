@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 :root {
   --brand: #191919;
   --dark-brown: #725a58;
@@ -53,7 +53,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   padding: 1rem 1.5rem;
   transition: transform 0.3s ease;
 }
@@ -144,7 +144,7 @@ img {
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--dark-brown);
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
 }
 @media (min-width: 1280px) {
   .header__nav-link {
@@ -393,7 +393,7 @@ img {
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--dark-brown);
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   position: relative;
   text-align: center;
   display: inline-block;
@@ -422,21 +422,743 @@ img {
   letter-spacing: 0.02em;
 }
 
-.home__hero {
-  height: 100vh;
+.home {
+  padding-top: 112px;
+}
+@media (min-width: 1280px) {
+  .home {
+    padding-top: 184px;
+  }
+}
+.home .home-hero {
+  position: relative;
+  height: calc(100dvh - 112px);
+  width: 100%;
+  background: url("/images/top-fv.png") top center/cover no-repeat;
+  overflow: hidden;
+}
+@media (min-width: 1280px) {
+  .home .home-hero {
+    height: calc(100dvh - 184px);
+  }
+}
+.home .home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  z-index: 10;
+  animation: overlay-fadeout 1.5s ease-out 1s forwards;
+}
+.home .home-hero__body {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: calc(100% - 2rem);
+  transform: translateX(-50%);
+  z-index: 20;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.home .home-hero__signature {
+  max-width: 90%;
+  width: 600px;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.home .home-hero__description {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  font-family: "Nunito", "Arial", sans-serif;
+  opacity: 0;
+  animation: content-fadein 0.75s ease-out 1.25s forwards;
+  text-align: center;
+  max-width: 85%;
+  width: 600px;
+  margin-bottom: 2rem;
+}
+.home .home-hero__btn {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #fff;
+  font-family: "Lora", "Georgia", serif;
+  padding: 1rem 2rem;
+  border: 1px solid #fff;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0;
+  animation: content-fadein 0.8s ease-out 1.5s forwards;
+  transition: background-color 0.3s, color 0.3s;
+}
+.home .home-hero__btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--brand);
+}
+@media (min-width: 768px) {
+  .home .home-hero__btn {
+    padding: 1.5rem 2rem;
+  }
+}
+.home .home-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3rem 1rem 2.5rem;
+  width: 100%;
+  max-width: 992px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .home .home-about {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 5rem 2.5rem 3rem;
+  }
+}
+.home .home-about__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
 }
-.home__hero-title {
+@media (min-width: 768px) {
+  .home .home-about__body {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+.home .home-about__logo {
+  display: block;
+  width: 40px;
+  aspect-ratio: 1/1;
+  margin-bottom: 0.25rem;
+  background: url("/images/logo-black.svg") center/contain no-repeat;
+}
+@media (min-width: 768px) {
+  .home .home-about__logo {
+    width: 56px;
+    background-image: url("/images/logo-pink.svg");
+  }
+}
+.home .home-about__title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  color: var(--brand);
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+.home .home-about__description {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--dark-grey);
+  font-family: "Nunito", "Arial", sans-serif;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .home .home-about__description {
+    margin-bottom: 2.5rem;
+  }
+}
+.home .home-about__cta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .home .home-about__cta {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+}
+.home .home-about__btn {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: var(--dark-grey);
+  font-family: "Lora", "Georgia", serif;
+  padding: 1rem 2rem;
+  border: 1px solid var(--dark-grey);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+.home .home-about__btn:hover {
+  background-color: var(--accent);
+  color: var(--snow-white);
+  border-color: var(--accent);
+}
+@media (min-width: 768px) {
+  .home .home-about__btn {
+    padding: 1rem 2.5rem;
+  }
+}
+.home .home-about__btn {
+  flex-shrink: 0;
+}
+.home .home-about__signature {
+  width: 80%;
+  max-width: 320px;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .home .home-about__signature {
+    transform: rotate(345deg);
+  }
+}
+.home .home-about__image {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .home .home-about__image {
+    width: 30vw;
+    max-width: 300px;
+  }
+}
+.home .home-brands {
+  width: 100%;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 0 1rem 2.5rem;
+  background-color: var(--background);
+}
+@media (min-width: 768px) {
+  .home .home-brands {
+    padding: 0 2.5rem 4rem;
+  }
+}
+.home .home-brands__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: var(--mid-grey);
+  font-family: "Nunito", "Arial", sans-serif;
+  white-space: nowrap;
+}
+.home .home-brands__title::before, .home .home-brands__title::after {
+  content: "";
+  flex: 1;
+  max-width: 100%;
+  height: 0.5px;
+  background-color: var(--mid-grey);
+}
+.home .home-brands__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.5rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.6;
+}
+@media (min-width: 768px) {
+  .home .home-brands__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.home .home-brands__item {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (min-width: 992px) {
+  .home .home-brands__item {
+    max-width: 140px;
+  }
+}
+.home .home-customer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2.5rem 1rem;
+  background-color: var(--light-pink);
+}
+@media (min-width: 768px) {
+  .home .home-customer {
+    padding: 6rem 0;
+  }
+}
+.home .home-customer__title {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-weight: 400;
+  color: var(--dark-brown);
+  letter-spacing: 0.2em;
+  text-align: center;
   margin-bottom: 1rem;
 }
-.home__hero-subtitle {
+.home .home-customer__title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 0.5px;
+  background-color: var(--accent);
+  margin: 1rem auto 0;
+}
+@media (min-width: 768px) {
+  .home .home-customer__title::after {
+    width: 200px;
+  }
+}
+.home .home-customer__description {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--dark-grey);
+  font-family: "Nunito", "Arial", sans-serif;
+  text-align: center;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .home .home-customer__description {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--dark-grey);
+    font-family: "Nunito", "Arial", sans-serif;
+  }
+}
+.home .home-customer__btn {
   font-size: 1.125rem;
-  color: var(--color-dark-grey);
+  font-weight: normal;
+  color: var(--dark-grey);
+  font-family: "Lora", "Georgia", serif;
+  padding: 1rem 2rem;
+  border: 1px solid var(--dark-grey);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+.home .home-customer__btn:hover {
+  background-color: var(--accent);
+  color: var(--snow-white);
+  border-color: var(--accent);
+}
+@media (min-width: 768px) {
+  .home .home-customer__btn {
+    padding: 1rem 2.5rem;
+  }
+}
+.home .home-customer__btn {
+  margin-bottom: 2.5rem;
+}
+@media (min-width: 768px) {
+  .home .home-customer__btn {
+    margin-bottom: 4rem;
+  }
+}
+.home .home-customer__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto 2.5rem;
+  list-style: none;
+}
+@media (min-width: 768px) {
+  .home .home-customer__list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
+.home .home-customer__item {
+  aspect-ratio: 2/3;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .home .home-customer__item {
+    aspect-ratio: 4/5;
+  }
+}
+.home .home-customer__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home .home-customer__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.home .home-customer__body::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("/images/icon-quote.svg") center/contain no-repeat;
+  margin-bottom: 1rem;
+}
+.home .home-customer__comment {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--dark-brown);
+  font-family: "Lora", "Georgia", serif;
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .home .home-customer__comment {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--dark-brown);
+    font-family: "Lora", "Georgia", serif;
+  }
+}
+.home .home-customer__switch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.home .home-customer__switch-btn img {
+  width: 24px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.home .home-customer__switch-btn img:hover {
+  opacity: 1;
+}
+.home .home-customer__current {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--dark-brown);
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-style: italic;
+}
+.home .home-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 1rem;
+}
+@media (min-width: 768px) {
+  .home .home-services {
+    padding: 5rem 2.5rem;
+  }
+}
+.home .home-services__title {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-weight: 400;
+  color: var(--dark-brown);
+  letter-spacing: 0.2em;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.home .home-services__title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 0.5px;
+  background-color: var(--accent);
+  margin: 1.5rem auto 0.5rem;
+}
+@media (min-width: 768px) {
+  .home .home-services__title::after {
+    width: 200px;
+  }
+}
+.home .home-services__description {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--dark-grey);
+  font-family: "Nunito", "Arial", sans-serif;
+  text-align: center;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .home .home-services__description {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--dark-grey);
+    font-family: "Nunito", "Arial", sans-serif;
+  }
+}
+.home .home-services__btn {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: var(--dark-grey);
+  font-family: "Lora", "Georgia", serif;
+  padding: 1rem 2rem;
+  border: 1px solid var(--dark-grey);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+.home .home-services__btn:hover {
+  background-color: var(--accent);
+  color: var(--snow-white);
+  border-color: var(--accent);
+}
+@media (min-width: 768px) {
+  .home .home-services__btn {
+    padding: 1rem 2.5rem;
+  }
+}
+.home .home-services__btn {
+  margin-bottom: 2.5rem;
+}
+@media (min-width: 768px) {
+  .home .home-services__btn {
+    margin-bottom: 4rem;
+  }
+}
+.home .home-services__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 90%;
+  list-style: none;
+}
+@media (min-width: 768px) {
+  .home .home-services__list {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 992px;
+  }
+}
+.home .home-services__item {
+  position: relative;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media (min-width: 768px) {
+  .home .home-services__item {
+    width: 240px;
+    aspect-ratio: 1/1;
+  }
+  .home .home-services__item::after {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    width: 80%;
+    height: 100%;
+    border: 1px solid var(--accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .home .home-services__item:hover {
+    transform: scale(1.15);
+    z-index: 1;
+  }
+  .home .home-services__item:hover::after {
+    opacity: 1;
+  }
+}
+.home .home-services__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home .home-services__image--sp {
+  display: block;
+}
+@media (min-width: 768px) {
+  .home .home-services__image--sp {
+    display: none;
+  }
+}
+.home .home-services__image--pc {
+  display: none;
+}
+@media (min-width: 768px) {
+  .home .home-services__image--pc {
+    display: block;
+  }
+}
+.home .home-makeup {
+  width: 100%;
+  background-color: var(--light-pink);
+  padding: 4rem 1rem;
+}
+@media (min-width: 768px) {
+  .home .home-makeup {
+    padding: 5rem 0;
+  }
+}
+.home .home-makeup__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .home .home-makeup__inner {
+    padding: 0 2.5rem;
+    max-width: 1280px;
+  }
+}
+.home .home-makeup__title {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-weight: 400;
+  color: var(--snow-white);
+  letter-spacing: 0.2em;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.home .home-makeup__title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 0.5px;
+  background-color: var(--snow-white);
+  margin: 1.5rem auto 0.5rem;
+}
+@media (min-width: 768px) {
+  .home .home-makeup__title::after {
+    width: 200px;
+  }
+}
+.home .home-makeup__description {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--snow-white);
+  font-family: "Nunito", "Arial", sans-serif;
+  text-align: center;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .home .home-makeup__description {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--snow-white);
+    font-family: "Nunito", "Arial", sans-serif;
+  }
+}
+.home .home-makeup__btn {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: var(--snow-white);
+  font-family: "Lora", "Georgia", serif;
+  padding: 1rem 2rem;
+  border: 1px solid var(--snow-white);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.home .home-makeup__btn:hover {
+  background-color: var(--snow-white);
+  color: var(--accent);
+}
+@media (min-width: 768px) {
+  .home .home-makeup__btn {
+    padding: 1rem 2.5rem;
+  }
+}
+.home .home-makeup__contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+@media (min-width: 768px) {
+  .home .home-makeup__contents {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+}
+.home .home-makeup__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .home .home-makeup__body {
+    align-items: flex-start;
+    max-width: 400px;
+  }
+}
+.home .home-makeup__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  list-style: none;
+}
+.home .home-makeup__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.home .home-makeup__item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.home .home-makeup__image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .home .home-makeup__image {
+    max-width: 400px;
+  }
 }
 
+@keyframes overlay-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+}
+@keyframes content-fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .my-work {
   padding-top: 112px;
 }
@@ -495,7 +1217,7 @@ img {
 }
 .my-work__title {
   margin: 0;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   line-height: 1.3;
@@ -648,7 +1370,7 @@ img {
   min-width: 160px;
   min-height: 62px;
   padding: 24px 32px;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -765,7 +1487,7 @@ img {
 }
 .services__title {
   margin: 0;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   line-height: 1.3;
@@ -859,7 +1581,7 @@ img {
   }
 }
 .services__name {
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 400;
   font-style: normal;
@@ -903,7 +1625,7 @@ img {
   display: block;
 }
 .services__tagline {
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
@@ -939,7 +1661,7 @@ img {
   min-width: 160px;
   min-height: 62px;
   padding: 24px 32px;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -1043,7 +1765,7 @@ img {
   max-width: 26.0625rem;
   min-height: 4.875rem;
   margin: 0 auto;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   font-style: normal;
@@ -1205,7 +1927,7 @@ img {
   width: 100%;
   max-width: none;
   margin: 0 0 1rem;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 36px;
   font-weight: 400;
   font-style: normal;
@@ -1281,7 +2003,7 @@ img {
   margin-bottom: 1.5rem;
 }
 .classes__section-title {
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
@@ -1341,7 +2063,7 @@ img {
   min-height: 53px;
   padding: 20px 32px;
   white-space: nowrap;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -1427,7 +2149,7 @@ img {
 .class-detail__back {
   display: inline-block;
   margin-bottom: 1rem;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -1450,7 +2172,7 @@ img {
 .class-detail__page-title {
   margin: 0 0 1rem;
   text-align: center;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(1.625rem, 4.2vw, 2.25rem);
   font-weight: 400;
   font-style: normal;
@@ -1589,7 +2311,7 @@ img {
 }
 .class-detail__card-title {
   margin: 0 0 1rem;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   font-weight: 400;
   line-height: 1.2;
@@ -1640,7 +2362,7 @@ img {
   width: 100%;
   min-height: 52px;
   padding: 18px 24px;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
@@ -1699,7 +2421,7 @@ img {
   }
 }
 .class-detail__section-title {
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 400;
   line-height: 1.3;
@@ -1880,7 +2602,7 @@ img {
 .class-detail--one-to-one .class-detail__module-title,
 .class-detail--workshop .class-detail__module-title,
 .class-detail--beginner .class-detail__module-title {
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(1.125rem, 2.2vw, 1.5rem);
   font-weight: 400;
   font-style: normal;
@@ -2038,7 +2760,7 @@ img {
   box-sizing: border-box;
   width: 100%;
   margin: 0;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   font-style: normal;
@@ -2116,7 +2838,7 @@ img {
 }
 .beauty-tips__filter {
   flex-shrink: 0;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
@@ -2255,7 +2977,7 @@ img {
   min-width: 160px;
   min-height: 62px;
   padding: 24px 32px;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -2323,7 +3045,7 @@ img {
 }
 .about__eyebrow {
   margin: 0 0 0.5rem;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 400;
   font-style: normal;
@@ -2334,7 +3056,7 @@ img {
 }
 .about__title {
   margin: 0;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 400;
   font-style: normal;
@@ -2418,7 +3140,7 @@ img {
 }
 .about__headline {
   margin: 0 0 1.5rem;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 400;
   font-style: normal;
@@ -2462,7 +3184,7 @@ img {
   min-width: 160px;
   min-height: 62px;
   padding: 24px 32px;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
@@ -2504,7 +3226,7 @@ img {
 }
 .about__brands-title {
   margin: 0;
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 400;
   font-style: normal;
@@ -2565,7 +3287,7 @@ img {
   margin-bottom: 2.5rem;
 }
 .contact__title {
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-weight: 400;
   font-size: clamp(2.75rem, 7vw, 5rem);
   letter-spacing: 0.2em;
@@ -3138,12 +3860,12 @@ img {
      object-fit: contain;
 }
 .contact__signature-mark {
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(2.25rem, 5vw, 3.5rem);
   line-height: 1;
 }
 .contact__signature-name {
-  font-family: "Baskervville", "Georgia", serif;
+  font-family: "Cormorant Garamond", "Georgia", serif;
   font-size: clamp(1rem, 1.5vw, 1.125rem);
 }
 .contact__signature-note {
