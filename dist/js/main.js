@@ -1,6 +1,6 @@
-import { contactFormHandler } from './modules/contact-form.js'
-import { toggleHeaderMenu } from './modules/toggle-header-menu.js'
 import { initHeader } from './modules/header.js'
+import { homeForm } from './modules/home-form.js'
+import { toggleHeaderMenu } from './modules/toggle-header-menu.js'
 
 /**
  * Beauty Tips — hashtag filters behave like tabs. On a narrow phone we only tease the first three
@@ -158,9 +158,9 @@ if (myWorkRoot) {
 }
 
 function init() {
-  toggleHeaderMenu()
-  contactFormHandler()
   initHeader()
+  homeForm()
+  toggleHeaderMenu()
 }
 
 init()
